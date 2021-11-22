@@ -1,0 +1,66 @@
+.intro{
+ height: 100vh;
+}
+input{
+ width: 500px;
+ height: 50px;
+}
+*
+{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    overflow-x: hidden;
+    background-color: floralwhite;
+    min-height: 100%;
+}
+#header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  padding: 30px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(65, 62, 62);
+}
+#header.red{
+    height: max-content;
+}
+#header #mainlogo{
+    color: rgba(245, 245, 245, 0.74);
+    font-weight: 900;
+    font-size: 2em;
+    text-decoration: none;
+}
+#header ul{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; 
+}
+#header ul li{
+ list-style: none;
+ padding-left: 1em;   
+}
+#header ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 6px 13px;
+}
+#header ul li a:hover{
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+}
+#headbutton{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    padding: 10px;
+    margin-left: 5%;
+}
