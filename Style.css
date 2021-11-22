@@ -1,15 +1,15 @@
-.intro{
+.intro{/*Скролинг и растановка анимации фона*/
  height: 250vh;
  text-align: center;
  line-height: 700px;
  position: absolute;
 }
-.text{
+.text{/*Раположение текста и анимации на фоне*/
     color: aliceblue;
     font-size: 72pt;
     text-align: center;
 }
-input{
+input{/*Поле поиска*/
  width: 500px;
  height: 50px;
  font-size: 24pt;
