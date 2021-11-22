@@ -1,4 +1,4 @@
-VANTA.NET({
+VANTA.NET({//Анимация фона частиц//
  el: "#intro",
  mouseControls: true,
  touchControls: true,
