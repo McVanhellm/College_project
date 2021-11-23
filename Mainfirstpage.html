@@ -5,30 +5,108 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>My group</title>
+ <link rel="stylesheet" href="CSSsector.css">
  <link rel="stylesheet" href="Style.css">
+ 
 </head>
 <body>
   <div class="intro" id="intro">
     <!--Код на анимации-->
-    <p class="text">
-    ТУТ ПИСАТЬ АНИМИРОВАННЫЙ ТЕКСТ и всякие моменты
-    </p>
-     </div>
+    <div class="slider">
+      <div class="nav">
+          <div class="prev">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>            
+          </div>    
+          <div class="next">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>                
+          </div>
+      </div>
+      <div class="item is-active" style="background-image: url(bg-photo.jpg)">
+          <div class="content">
+              <div class="item-title">Лабораторные работы</div>
+              <div class="item-text">Описание</div>
+          </div>
+          <div class="imgs">
+              <div class="grid">
+                  <div class="img img-1">
+                      <img src="photo-1.jpg"/>
+                  </div>
+                  <div class="img img-2">
+                      <img src="photo-2.jpg"/>
+                  </div>
+                  <div class="img img-3">
+                      <img src="photo-3.jpg"/>
+                  </div>
+                  <div class="img img-4">
+                      <img src="photo-4.jpg"/>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Еще слайды -->
+      <div class="item is-active" style="background-image: url(bg-photo.jpg)">
+        <div class="content">
+            <div class="item-title">Лабораторные работы</div>
+            <div class="item-text">Описание</div>
+        </div>
+        <div class="imgs">
+            <div class="grid">
+                <div class="img img-1">
+                    <img src="photo-1.jpg"/>
+                </div>
+                <div class="img img-2">
+                    <img src="photo-2.jpg"/>
+                </div>
+                <div class="img img-3">
+                    <img src="photo-3.jpg"/>
+                </div>
+                <div class="img img-4">
+                    <img src="photo-4.jpg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="item" style="background-image: url(bg-photo.jpg)">
+          <div class="content">
+              <div class="item-title">Заголовок</div>
+              <div class="item-text">Описание</div>
+          </div>
+          <div class="imgs">
+              <div class="grid">
+                  <div class="img img-1">
+                      <img src="photo-1.jpg"/>
+                  </div>
+                  <div class="img img-2">
+                      <img src="photo-2.jpg"/>
+                  </div>
+                  <div class="img img-3">
+                      <img src="photo-3.jpg"/>
+                  </div>
+                  <div class="img img-4">
+                      <img src="photo-4.jpg"/>
+                  </div>
+              </div>
+          </div>
+      </div>    
+    </div>
  <div class="header" id="header">
-  <a id="mainlogo" href="Main.html">Welcome</a>
+  <div id="mainlogo" class="sing_word">PS<span>Y</span>L<span>AB</span></div>
   <input type="Search" id="search">
   <ul>
       <li><a class="navLink" href="Main.html">Главная</a></li>
-      <li><a class="navLink" href="Info.html">Ученики</a></li>
-      <li><a class="navLink" href="ContactHead.html">Куратор</a></li>
-      <li><a class="navLink" href="Contact.html">Связь</a></li>
-      <li><a class="navLink" href="News">Новости</a></li>
+      <li><a class="navLink" href="Info.html">Задания</a></li>
+      <li><a class="navLink" href="ContactHead.html">Разработчики</a></li>
+      <li><a class="navLink" href="Contact.html">Форум</a></li>
+     <!-- <li><a class="navLink" href="News">Новости</a></li>-->
     </ul>
 </div>
 <div class="content">
  <div class="smh"> 
  </div> 
 </div>
+<script src="anime.min.js"></script>
+<script src="JSsector.js"></script>
 <script src="three.min.js"></script><!--Библиотека веток-->
 <script src="vanta.net.min.js"></script><!--Библиотека частиц-->
 <script src="JSanimation.js"></script>
