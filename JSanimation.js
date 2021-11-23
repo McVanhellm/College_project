@@ -13,6 +13,7 @@ VANTA.NET({//Анимация фона частиц//
  maxDistance: 22.00,
  spacing: 16.00
 })
+//Тут писал Федя
 window.addEventListener("scroll", function(){
  let scrollPos = this.window.scrollY;
 if(scrollPos > 199){
