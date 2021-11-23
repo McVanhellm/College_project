@@ -11,8 +11,9 @@
 			$this->design = $action;
 		}
 
-		public function LoadDesign()
+		public function LoadDesign($args = [])
 		{
+			extract($args);
 			require_once("application/Views/".$this->controller."/".$this->design.".php");
 		}
 

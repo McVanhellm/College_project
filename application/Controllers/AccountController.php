@@ -2,14 +2,35 @@
 
 	class AccountController extends Controller 
 	{
+		protected $requst = [];
+
 		public function LoginAction()
 		{
-			$this->view->LoadDesign();
+			if(isset($_POST["loginbtn"]))
+			{
+				$receivedLogin = strip_tags($_POST['login']);
+				$receivedPassword = strip_tags($_POST['password']);
+
+				$this->requst = [
+					"Message" => $this->model->AuthorizationAccount($receivedLogin,$receivedPassword),
+				];
+			}
+			$this->view->LoadDesign($this->requst);
 		}
 
 		public function RegisterAction()
 		{
-			echo "register";
+			if(isset($_POST["registerbtn"]))
+			{
+				$receivedLogin = strip_tags($_POST['login']);
+				$receivedPassword = strip_tags($_POST['password']);
+				$receivedEmail = strip_tags($_POST['email']);
+
+				$this->requst = [
+					"Message" => $this->model->CreateAccout($receivedLogin,$receivedPassword,$receivedEmail),
+				];
+			}
+			$this->view->LoadDesign($this->requst);
 		}
 	}
 

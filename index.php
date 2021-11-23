@@ -1,9 +1,12 @@
 <?php
-
-	require_once("application/Core/Router.php");
-	require_once("application/Lib/debug.php"); 	// Debug Mode
+	
+	// Подключение основных классов
+	require_once("application/app.php");
 
 	// Маршрутизация
 	$router = new Router();
+
+	// База данных
+	$datebase = new BaseDate();
 
 ?>
