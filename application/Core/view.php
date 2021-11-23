@@ -15,5 +15,11 @@
 		{
 			require_once("application/Views/".$this->controller."/".$this->design.".php");
 		}
+
+		public static function Exception($code)
+		{
+			require_once("application/Views/Error/".$code.".php");
+			exit;
+		}
 	}	
 ?>

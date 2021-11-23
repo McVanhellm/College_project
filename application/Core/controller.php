@@ -1,7 +1,5 @@
 <?php 
 
-	require_once("application/Core/View.php");
-
 	class Controller
 	{
 		public $controller;

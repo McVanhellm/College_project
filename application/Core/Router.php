@@ -1,5 +1,5 @@
 <?php 
-
+	
 	class Router
 	{
 		protected $routes;
@@ -33,7 +33,7 @@
 		{
 			if(!in_array($this->getPath(), $routes))
 			{
-				require_once("application/Views/Error/404.php");
+				View::Exception(404);
 			}
 			else
 			{

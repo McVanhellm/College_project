@@ -3,18 +3,13 @@
 	return [
 
 		'' => [
-			'controller' => '',
-			'action' => '',
+			'controller' => 'StartPage',
+			'action' => 'Index',
 		],	
 
 		'index' => [
-			'controller' => '',
-			'action' => '',
-		],
-
-		'404' => [
-			'controller' => '',
-			'action' => '',
+			'controller' => 'StartPage',
+			'action' => 'Index',
 		],
 
 		'account/login' => [
@@ -25,6 +20,11 @@
 		'account/register' => [
 			'controller' => 'Account',
 			'action' => 'Register',
+		],
+
+			'account/profile' => [
+			'controller' => 'Account',
+			'action' => 'Profile',
 		],
 
 	];

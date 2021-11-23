@@ -1,6 +1,4 @@
 <?php 
-	
-	require_once("application/Core/Controller.php");
 
 	class AccountController extends Controller 
 	{
