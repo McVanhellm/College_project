@@ -6,7 +6,4 @@
 	// Маршрутизация
 	$router = new Router();
 
-	// База данных
-	$datebase = new BaseDate();
-
 ?>
