@@ -1,27 +1,52 @@
 <?php 
 
+	// Сделать защиту от sql инъекций
+
 	class BaseDate
 	{
 
+		protected $profile;
 		protected $mysqlConnect;
 
 		public function __construct()
 		{
-			$profile = require_once("application/Config/db.php");
-			$this->mysqlConnect = mysqli_connect($profile['host'], $profile['user'], $profile['pass'], $profile['dbname']);
+			$this->profile = require_once("application/Config/db.php");
+
+			// Проверка подключеник базе данных
+			$this->dbConnect();
+			mysqli_close($this->mysqlConnect);
+		}
+
+		public function dbConnect()
+		{
+			$this->mysqlConnect = mysqli_connect($this->profile['host'], $this->profile['user'], $this->profile['pass'], $this->profile['dbname']);
 
 			if (!($this->mysqlConnect))
 				View::Exception(401);
 		}
 
-		public function GetDate($query)
+		public function getDate($query)
 		{
-			return 1;
+			$this->dbConnect();
+
+			if($requst = mysqli_query($this->mysqlConnect, $query))
+			{
+				$result = mysqli_fetch_assoc($requst);
+				mysqli_free_result($requst);
+				$this->mysqlConnect->close();
+				return $result;
+			}
+			else
+			{
+				return null;
+			}
 		}
 
-		public function SetDate($query)
+		public function updateDate($query)
 		{
-			
+			$this->dbConnect();
+			$this->mysqlConnect->query($query);
+			$this->mysqlConnect->close();
 		}
 	}
 
