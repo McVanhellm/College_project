@@ -18,13 +18,13 @@
 		],
 
 		'account/login' => [
-			'controller' => 'account',
-			'action' => 'login',
+			'controller' => 'Account',
+			'action' => 'Login',
 		],
 
 		'account/register' => [
-			'controller' => 'account',
-			'action' => 'register',
+			'controller' => 'Account',
+			'action' => 'Register',
 		],
 
 	];

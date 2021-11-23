@@ -1,10 +1,6 @@
-<?php 
-	
-	require_once("application/Core/Controller.php");
-
-	class LoginController extends Controller 
-	{
-		
-	}
-
-?>
+<form>
+	<p>Login</p>
+	<p><input type="text" name="" id=""></p>
+	<p>Пароль</p>
+	<p><input type="text" name="" id=""></p>
+</form>

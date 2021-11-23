@@ -4,7 +4,6 @@
 	{
 		protected $routes;
 		protected $routesPath = [];
-		protected $routesParams = [];
 
 		function __construct()
 		{
@@ -12,11 +11,10 @@
 
 			foreach ($this->routes as $key => $value)
 			{
-				array_push($this->routesParams, $value);
 				array_push($this->routesPath, $key);
 			}
 
-			$this->checkPage($this->routesPath, $this->routesParams);
+			$this->checkPage($this->routesPath);
 		}
 
 		function getPath() 
@@ -31,21 +29,26 @@
 			return $path;
 		}
 
-		function checkPage($routes, $routesParams)
+		function checkPage($routes)
 		{
 			if(!in_array($this->getPath(), $routes))
-				echo "Такой страницы нет";
+			{
+				require_once("application/Views/Error/404.php");
+			}
 			else
 			{
-				$controller = $this->routes[$this->getPath()]['controller'];
-				$action = $this->routes[$this->getPath()]['action'];
-				return $this->runPage($controller, $action);
+				return $this->runPage($routes);
 			}
 		}
 
-		function runPage()
+		function runPage($routes)
 		{
-			
+			$controller = $this->routes[$this->getPath()]['controller']."Controller";
+			$action = $this->routes[$this->getPath()]['action']."Action";
+
+			require_once("application/Controllers/".$controller.".php");
+			$pageController = new $controller($this->routes[$this->getPath()]['controller'], $this->routes[$this->getPath()]['action']);
+			$pageController->$action();
 		}
 	}
 
