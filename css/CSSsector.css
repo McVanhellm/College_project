@@ -9,7 +9,7 @@
  position: relative;
  overflow: hidden;
  margin: 20px 0;
- box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+ 
 }
 .slider .item {
  position: absolute;
@@ -35,7 +35,7 @@
  left: 0;
  width: 100%;
  height: 100%;
- background-color: rgba(0,0,0,0.5);
+ 
 }
 .slider .item .imgs {
  position: relative;

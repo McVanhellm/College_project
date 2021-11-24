@@ -34,12 +34,11 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(65, 62, 62);
-}
-#header.red{
-    height: max-content;
+  background-color:#699BE5;
 }
 #header #mainlogo{
+    margin-top: 15px;/* Адаптиваная верстка*/
+    margin-right: 15px;
     color: rgba(245, 245, 245, 0.74);
     font-weight: 900;
     font-size: 2em;

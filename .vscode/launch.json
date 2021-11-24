@@ -4,13 +4,15 @@
  // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
  "version": "0.2.0",
  "configurations": [
+
+ 
   
 
   {
    "name": "Launch Edge",
    "request": "launch",
    "type": "pwa-msedge",
-   "url": "http://localhost:8080",
+   "url": "file:///C:/Users/mcvan/OneDrive/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/GitHub/College_project/Mainfirstpage.html",
    "webRoot": "${workspaceFolder}"
   },
   {
