@@ -14,7 +14,17 @@
 				array_push($this->routesPath, $key);
 			}
 
-			$this->checkPage($this->routesPath);
+			$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+			if (strpos($path, '.png') !== false || strpos($path, '.css') !== false) 
+			{
+				// Если файла нет то кидаем 404 сделать
+				$path = $this->getPath();
+				require_once($path);
+			}
+			else
+			{
+				$this->checkPage($this->routesPath);
+			}
 		}
 
 		function getPath() 
@@ -25,7 +35,7 @@
 
 			if(preg_match($regex, $path, $match))
 				$path = str_replace($match[0],'',$path);
-
+			
 			return $path;
 		}
 
