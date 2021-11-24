@@ -4,6 +4,8 @@
  // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
  "version": "0.2.0",
  "configurations": [
+  
+
   {
    "name": "Launch Edge",
    "request": "launch",
@@ -35,6 +37,12 @@
    "request": "launch",
    "name": "Open Mainfirstpage.html",
    "file": "g:\\Project\\College_project\\Mainfirstpage.html"
+  },
+  {
+   "name": "Launch Microsoft Edge and open the Edge DevTools",
+   "request": "launch",
+   "type": "vscode-edge-devtools.debug",
+   "url": "" // Provide your project's url to finish configuring
   }
  ]
 }
