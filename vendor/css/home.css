@@ -1,0 +1,25 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	display:flex;
+}
+
+.left-menu{
+	background-color: #6393DC;
+	width: 110px;
+	height: 100vh;
+}
+
+.left-menu img {
+	padding-left: 13px;
+	padding-top: 10px;
+}
+
+.them-box{
+	width: 20%;
+	height: 100vh;
+	background-color: red;
+}

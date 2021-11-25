@@ -115,6 +115,9 @@ a{
       text-decoration: none;
 }
 
+
+      <?php echo file_get_contents("vendor/css/login.css"); ?>
+
 </style>
 
 <body>

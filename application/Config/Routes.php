@@ -1,5 +1,9 @@
 <?php 
 
+	// 
+	//    Хранилище маршрутов для сайта
+	//
+
 	return [
 
 		'' => [
@@ -25,6 +29,11 @@
 			'account/profile' => [
 			'controller' => 'Account',
 			'action' => 'Profile',
+		],
+
+			'account/home' => [
+			'controller' => 'Account',
+			'action' => 'Home',
 		],
 
 	];

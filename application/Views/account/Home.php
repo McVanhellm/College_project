@@ -1,9 +1,16 @@
+<?php 
+
+	if(!(session::getDate()["isAuth"]))
+		return header("Location: login");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../vendor/css/login.css">
 	<meta charset="utf-8">
-	<title>Регистрация</title>
+	<title>Личный кабинет</title>
 </head>
 
 <style type="text/css">
@@ -30,6 +37,10 @@
 					?>
 					<input class="btn" type="submit" name="registerbtn" value="Регистрация"/>
 					<div class='registration'>
+                              <a href="../account/login"> <?php 
+                                    $requst = session::getDate();
+                                    echo $requst["login"];
+                               ?> </a>
 					<a href="../account/login">У меня уже есть аккаунта</a>
 				</div>
 				</form>

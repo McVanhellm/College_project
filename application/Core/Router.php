@@ -1,5 +1,9 @@
 <?php 
 	
+	// 
+	//    Класс в котором происходят перенаправление по сайту
+	//
+
 	class Router
 	{
 		protected $routes;
@@ -15,11 +19,11 @@
 			}
 
 			$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-			if (strpos($path, '.png') !== false || strpos($path, '.css') !== false) 
+			if (strpos($path, '.png') !== false || strpos($path, '.jpg') !== false || strpos($path, '.gif') !== false) 
 			{
-				// Если файла нет то кидаем 404 сделать
 				$path = $this->getPath();
-				require_once($path);
+				echo file_get_contents($path);
+				//require_once($path);
 			}
 			else
 			{
