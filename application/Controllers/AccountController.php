@@ -2,6 +2,7 @@
 
 	class AccountController extends Controller 
 	{
+
 		protected $requst = [];
 
 		public function LoginAction()
@@ -30,6 +31,11 @@
 					"Message" => $this->model->CreateAccout($receivedLogin,$receivedPassword,$receivedEmail),
 				];
 			}
+			$this->view->LoadDesign($this->requst);
+		}
+
+		public function HomeAction()
+		{
 			$this->view->LoadDesign($this->requst);
 		}
 	}

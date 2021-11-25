@@ -1,5 +1,10 @@
 <?php 
 
+	// 
+	//    Хранилище данных от базы данных
+	//
+
+
 	return [
 		'host' => "localhost",
 		"dbname" => "fizikpro",

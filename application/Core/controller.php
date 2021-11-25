@@ -1,5 +1,9 @@
 <?php 
 
+	// 
+	//    Класс которы отвечает за соединение view с model
+	//
+
 	class Controller
 	{
 		public $controller;

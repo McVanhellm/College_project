@@ -1,5 +1,6 @@
 <?php 
 
+	require_once("application/Lib/session.php"); // session
 	require_once("application/Core/Router.php");
 	require_once("application/Core/Controller.php");
 	require_once("application/Core/View.php");

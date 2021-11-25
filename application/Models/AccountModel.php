@@ -26,8 +26,10 @@
 			{
 				if($requst['password'] == md5($password))
 				{
-					//Авторизация
-					return header("Location: ../"); // на старт страницу
+					if(session::isAuth() != true)
+						session::authorization($login);
+
+					return header("Location: ../account/home");
 				}
 				return "Неверный пароль";
 			}
