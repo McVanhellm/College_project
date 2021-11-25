@@ -18,7 +18,6 @@ svg
       position: absolute;
       top:48.8%;
 }
-
 .parent {
     width: 100%;
     height: 100%;
@@ -27,7 +26,6 @@ svg
     left: 0;
     overflow: auto;
 }
-
 .block {
     width: 400px;
     height: 400px;
@@ -36,33 +34,25 @@ svg
     left: 46%;
     margin: -125px 0 0 -125px;
 }
-
 .block img{
       padding-left: 40%;
       margin-bottom: 33%;
 }
-
 .btn{
       background: #699BE5;
       box-shadow: 0px 4px 17px #699BE5;
       border-radius: 5px;
-
       width: 320px;
       height: 50px;
       margin-left: 40px;
-
       border: none;
-
       font-family: Montserrat;
       font-style: normal;
       font-weight: 600;
       font-size: 23px;
       line-height: 44px;
-
       cursor: pointer;
-
       color: #FFFFFF;
-
       transition: 1s;
 }
 .btn:hover
@@ -71,53 +61,41 @@ svg
 }
 .warning
 {
-
       font-family: Montserrat;
       font-style: normal;
       font-weight: 500;
       font-size: 18px;
       line-height: 22px;
       /* identical to box height */
-
       padding-bottom: 30px;
-
       text-align: center;
-
-
       color: #E57169;
-
 }
 .text-field__input
 {
       width: 320px;
       margin-left: 40px;
       margin-bottom: 50px;
-
       font-family: Montserrat;
       font-style: normal;
       font-weight: 600;
       font-size: 23px;
       line-height: 32px;
       /* identical to box height */
-
       border: 0;
       border-bottom-width: 3px; /* Толщина линии внизу */
       border-bottom-style: solid; /* Стиль линии внизу */
       border-bottom-color: #7A7979; /* Цвет линии внизу */
-
       color: #7A7979;
 }
-
 .text-field__input::placeholder
 {
       opacity: 0.54;
 }
-
 .text-field__input:focus
 {
       outline: none;
 }
-
 .registration{
       margin-top: 5px;
       font-family: Montserrat;
@@ -126,14 +104,9 @@ svg
       font-size: 15px;
       line-height: 22px;
       /* identical to box height */
-
       cursor: pointer;
-
       padding-bottom: 30px;
-
       text-align: center;
-
-
       color: #7A7979;
 }
 
