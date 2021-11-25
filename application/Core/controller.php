@@ -1,11 +1,9 @@
 <?php 
 
-	// 
-	//    Класс которы отвечает за соединение view с model
-	//
-
 	class Controller
 	{
+		# Class connector view to model
+
 		public $controller;
 		public $action;
 		public $view;

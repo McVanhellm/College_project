@@ -143,7 +143,7 @@
 }
 .slider .nav .next svg, 
 .slider .nav .prev svg {
- stroke: #1060a1;
+ stroke: #BFE2FF;
  transition: stroke 0.3s;
 }
 .slider .nav .next:hover svg, 

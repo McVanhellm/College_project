@@ -1,7 +1,5 @@
 <?php 
 
-	// Сделать защиту от sql инъекций
-
 	class BaseDate
 	{
 
@@ -11,8 +9,6 @@
 		public function __construct()
 		{
 			$this->profile = require_once("application/Config/db.php");
-
-			// Проверка подключеник базе данных
 			$this->dbConnect();
 			mysqli_close($this->mysqlConnect);
 		}
@@ -37,9 +33,7 @@
 				return $result;
 			}
 			else
-			{
 				return null;
-			}
 		}
 
 		public function updateDate($query)

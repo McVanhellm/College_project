@@ -2,6 +2,8 @@
 
 	class View
 	{
+		# The class that is responsible for the visual part
+
 		public $controller;
 		public $design = "Layouts/default";
 

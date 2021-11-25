@@ -1,11 +1,9 @@
 <?php 
-	
-	// 
-	//    Класс в котором происходят перенаправление по сайту
-	//
 
 	class Router
 	{
+		# A class that redirects to pages
+
 		protected $routes;
 		protected $routesPath = [];
 
@@ -14,23 +12,19 @@
 			$this->routes = require_once("application/Config/Routes.php");
 
 			foreach ($this->routes as $key => $value)
-			{
 				array_push($this->routesPath, $key);
-			}
 
 			$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-			if (strpos($path, '.png') !== false || strpos($path, '.jpg') !== false || strpos($path, '.gif') !== false) 
+			if (strpos($path, '.png') !== false || strpos($path, '.jpg') !== false || strpos($path, '.gif') !== false || strpos($path, '.js') !== false) 
 			{
 				$path = $this->getPath();
 				echo file_get_contents($path);
-				//require_once($path);
 			}
 			else
-			{
 				$this->checkPage($this->routesPath);
-			}
 		}
 
+		# Getting the path the person is on
 		function getPath() 
 		{
 			$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -43,16 +37,13 @@
 			return $path;
 		}
 
+		# Check for page existence
 		function checkPage($routes)
 		{
 			if(!in_array($this->getPath(), $routes))
-			{
 				View::Exception(404);
-			}
 			else
-			{
 				return $this->runPage($routes);
-			}
 		}
 
 		function runPage($routes)

@@ -1,11 +1,9 @@
 <?php 
 
-	// 
-	//    Класс в котором происходят все основные вычисения сайта
-	//
-
 	class Model
 	{
+		# The class in which all calculations are performed
+		
 		public $controller;
 		public $action;
 		public $datebase;

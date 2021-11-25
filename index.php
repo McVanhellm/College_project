@@ -1,9 +1,16 @@
 <?php
-	
-	// Подключение основных классов
+
+	/*
+
+		CMS by xoheveras(Egor Udovin)
+		https://github.com/xoheveras/CMS
+
+	*/
+
+	# Connecting the main classes
 	require_once("application/app.php");
 
-	// Маршрутизация
+	# Routing
 	$router = new Router();
 
 ?>

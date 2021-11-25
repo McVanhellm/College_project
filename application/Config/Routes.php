@@ -1,18 +1,32 @@
 <?php 
 
-	// 
-	//    Хранилище маршрутов для сайта
-	//
-
 	return [
 
+		/*
+			Admin Panel
+		*/
+
+		'admin/login' => [
+			'controller' => 'Admin',
+			'action' => 'AdminLogin',
+		],
+
+		'admin/panel' => [
+			'controller' => 'Admin',
+			'action' => 'Panel',
+		],
+
+		/*
+			User site
+		*/
+
 		'' => [
-			'controller' => 'StartPage',
+			'controller' => 'Index',
 			'action' => 'Index',
 		],	
 
 		'index' => [
-			'controller' => 'StartPage',
+			'controller' => 'Index',
 			'action' => 'Index',
 		],
 
@@ -26,16 +40,10 @@
 			'action' => 'Register',
 		],
 
-			'account/profile' => [
-			'controller' => 'Account',
-			'action' => 'Profile',
-		],
-
-			'account/home' => [
+		'account/home' => [
 			'controller' => 'Account',
 			'action' => 'Home',
 		],
-
 	];
 
 ?>
