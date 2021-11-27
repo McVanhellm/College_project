@@ -1,0 +1,26 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.fontSize": 35,
+    "editor.tabSize": 1,
+    "terminal.integrated.allowChords": false,
+    "editor.codeLens": false,
+    "explorer.confirmDelete": false,
+    "editor.accessibilityPageSize": 40,
+    "vscode-edge-devtools.mirrorEdits": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "files.autoSave": "afterDelay",
+    "vscode-edge-devtools.webhint": false,
+    "git.enableSmartCommit": true,
+    "workbench.editorAssociations": {
+        ".php": "default"
+    }
+}
