@@ -1,0 +1,143 @@
+* /* Генеральные настройки всей страницы */
+{
+ margin: 0; /*Чинят автоматические отступы в браузере*/
+ padding: 0; /*Чинят автоматическите отстпы в браузере*/
+ font-family:Verdana, Geneva, Tahoma, sans-serif; /*Шрифт всей страницы*/
+}
+body{
+    display: flex;
+    height: 100%;
+    min-width: 1580px;
+    overflow-x:hidden;
+}
+
+#leftMenu{ /*Левый столб страницы*/
+ position: fixed;
+ left: 0;
+ width: 150px;
+ height: 100%;
+  /*Чтобы на ровном месте не появлялся скролл*/
+ background-color:rgb(99, 147, 221);
+}
+#rightMenu{ /*Правый столб страницы*/
+    right: 0;
+    margin-left: auto;
+    width: 200px;
+    height: 100%;
+    margin-top: -18px; /*Чтобы на ровном месте не появлялся скролл*/
+}
+#userArea{
+   display: flex;
+   width: 200px;
+   height: 100px; 
+   align-items: center;
+}
+#userArea img{
+    height: 50px;
+    border-radius:50%;
+    margin-left: 10px;   
+}
+#userInfo{
+    font-family: Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+}
+#level_list{ /*Столб 6-ти уровней*/
+    position: absolute;
+    left: 250px;
+    height: 1000px;
+    width: 85px;
+    margin-top: 50px;
+}
+#subList{ /*Блок внутри столб, для адекватной настройки*/
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-top: 100%;
+    flex-flow: column;
+    align-items: center;
+}
+#dotted_line{
+    position: absolute;
+    margin-top: 100px;
+    height: 600px;
+    border-right: 3px dotted rgba(133, 133, 133, 0.438);
+    z-index: 0;
+}
+.levels{ /*Кружки уровней*/
+    display: flex;
+    height: 50px;
+    width: 50px;
+    margin-top: 60px;
+    border: 3px solid rgb(121, 165, 231);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: rgb(99, 147, 221);
+    cursor: pointer;
+    transition: 0.5s all ease;
+    background-color: white;
+    z-index: 1;
+    opacity: 1;
+    
+}
+.selected{
+    background-color: rgb(121, 165, 231);
+    color: white;
+    width: 70px;
+    height: 70px;
+}
+.levels:focus{
+    background-color: rgb(121, 165, 231);
+    color: white;
+}
+.levels_number{ /*Цифры внутри кружков*/
+  font-size: 1.5em;
+}
+#first_level{ /*Первый кружок(уровень)*/
+    height: 70px;
+    width: 70px;
+}
+#sixth_level{ /*Последний кружок(уровень)*/
+    height: 70px;
+    width: 70px;
+}
+.content{ /*Блок с темами*/
+    height: 100%;
+    width: 50%;
+    min-width: 800px;
+    margin: 0 10% 0 25%;
+    
+}
+.test{ /*Настройка самих тем*/
+    display: flex;
+    height: 80px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 18px auto;
+    border-radius: 5px;
+    justify-content: space-between; 
+    
+}
+.text{
+    display: block;
+    align-self: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 30px;
+    width: 780px;
+}
+.test button{ /*Настройка кнопки в теме*/
+  background-color:rgb(121, 165, 231);
+  color: white;
+  width: 22%;
+  height: 100%;
+  border: 0px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+  font-size: 1.2em;
+  min-width: 158px;
+}
+.test button:hover{ /*Кнопка при наводке на неё*/
+  background-color: rgb(26, 49, 85);  
+}

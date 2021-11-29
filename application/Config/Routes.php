@@ -16,6 +16,21 @@
 			'action' => 'Panel',
 		],
 
+		'admin/pages' => [
+			'controller' => 'Admin',
+			'action' => 'Pages',
+		],
+
+		'admin/setting' => [
+			'controller' => 'Admin',
+			'action' => 'setting',
+		],
+
+		'admin/plugins' => [
+			'controller' => 'Admin',
+			'action' => 'plugins',
+		],
+
 		/*
 			User site
 		*/

@@ -32,7 +32,7 @@
 				if($requst['password'] == md5($password))
 				{
 					if(session::isAuth("isAuth") != true)
-						session::authorization(false,true,$login);
+						session::authorization(false,true,$login,$requst["avatar"]);
 
 					return header("Location: ../account/home");
 				}

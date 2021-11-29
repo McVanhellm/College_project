@@ -7,62 +7,41 @@
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 		<title>Панель администратора</title>
 	</head>
-	<body>
+	<body class="">
 
-		<div class="menu">
-			<a href="../"><img src="../vendor/image/logowhite.png"></a>
-			<input class="create-btn" type="submit" name="createPageBtn" value="Сохранить всё"/>
+		<div class="Menu-box">
+			<div class="Menu-item-box">
+				<a href="../"><img class="logo" src="https://raw.githubusercontent.com/xoheveras/CMS/main/vendor/image/logocms.png"></a>
+				<ul>
+					<li><a href="../admin/panel"><img src="https://raw.githubusercontent.com/xoheveras/CMS/main/cms_vendor/image/stats-chart.png"></a></li>
+					<li><a href="../admin/pages"><img src="https://raw.githubusercontent.com/xoheveras/CMS/main/cms_vendor/image/document-sharp.png"></a></li>
+					<li><a href="../admin/setting"><img src="https://raw.githubusercontent.com/xoheveras/CMS/main/cms_vendor/image/hammer-sharp.png"></a></li>
+				</ul>
+			</div>
 		</div>
-
-		<div class="blocks">
-			<div class="content">
-				<div class="routes box">
-					<p>Routes</p>
-					 <textarea id="routes"> <?php echo file_get_contents("application/Config/Routes.php"); ?></textarea>
-				</div>
-				<div class="routes box">
-					<p>DateBase</p>
-					<textarea id="datebase"><?php echo file_get_contents("application/Config/db.php"); ?></textarea>
-				</div>
-				<div class="routes box">
-					<p>Session</p>
-					<textarea id="datebase"><?php echo file_get_contents("application/Lib/session.php"); ?></textarea>
+		<div class="item-box">
+			<div class="info-box">
+				<div class="info-box-box">
+					<p class="first-text"><?php echo count(searchPHP()) + count(searchStyleAndJs("css")) + count(searchStyleAndJs("js")); ?></p>
+					<p class="sub-text">Кол-во страниц</p>
 				</div>
 			</div>
-
-			<div class="editor-file">
-				<div class="selectfile box">
-					<div class="left-select-box">
-						<div class="select">
-							<select class="newselect" size="10">
-								<?php foreach (searchPHP() as $key => $value) { echo "<option>".$value."</option>"; } ?>
-							</select>
-						</div>
-						<div class="select">
-							<select size="10">
-								<?php foreach (searchCSS() as $key => $value) { echo "<option>".$value."</option>"; } ?>
-							</select>
-						</div>
-					</div>
-					<div class="editorfile">
-						<textarea id="editorfile"></textarea>
-					</div>
-				</div>
-
-				<div class="routes">
-					<form action="panel" method="POST">
-						<p class="text">Add new page</p>
-						<p><input class="text-field__input text" type="text" name="folder" required placeholder="folder"></p>
-						<p><input class="text-field__input text" type="text" name="controller" required placeholder="controller"></p>
-						<p><input class="text-field__input text" type="text" name="action" required placeholder="action"></p>
-						<input class="create-btn" type="submit" name="createPageBtn" value="Создать"/>
-					</form>
+			<div class="info-box">
+				<div class="info-box-box">
+					<p class="first-text">cms v0.1</p>
+					<p class="sub-text">Последняя версия</p>
 				</div>
 			</div>
 		</div>
-
 		<style type="text/css"> 
-			<?php echo file_get_contents("cms_vendor/css/panel.css"); ?>
+			<?php
+				$_SESSION['themMode'] = true;
+
+				if(session::getDate()["themMode"])
+					echo getRaw("css","panelDark.css"); 
+				else
+					echo getRaw("css","panelLight.css");
+			?>
 		</style>
 	</body>
 </html>
