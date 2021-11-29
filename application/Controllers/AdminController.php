@@ -14,7 +14,7 @@
 			$this->view->LoadDesign();
 		}
 
-		public function PanelAction()
+		public function PagesAction()
 		{
 			if(isset($_POST["createPageBtn"]))
 			{
@@ -24,7 +24,11 @@
 
 				$this->model->CreatePage($receivedFolder,$receivedController,$receivedAction);
 			}
+			$this->view->LoadDesign();
+		}
 
+		public function PanelAction()
+		{
 			$this->view->LoadDesign();
 		}
 	}

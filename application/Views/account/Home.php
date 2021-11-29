@@ -28,11 +28,12 @@
 							echo "<div class='warning'><p>".$args["Message"]."</p></div>";
 						?>
 						<input class="btn" type="submit" name="registerbtn" value="Регистрация"/>
-						<div class='registration'>
+						<div class='registration'> Привет:
 	                              <a href="../account/login"> <?php 
 	                                    $requst = session::getDate();
 	                                    echo $requst["login"];
 	                               ?> </a>
+						<br>
 						<a href="../account/login">У меня уже есть аккаунта</a>
 					</div>
 					</form>

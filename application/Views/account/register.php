@@ -14,7 +14,7 @@
 
 		<div class="parent">
 		    <div class="block">
-		        <img align="center" src="../vendor/image/logo.png" alt=""/>
+		        <img text-align="center" src="../vendor/image/logo.png" alt=""/>
 					<form action="register" method="POST">
 						<p><input class="text-field__input" type="text" name="login" id="" required placeholder="Логин"></p>
 						<p><input class="text-field__input" type="password" name="password" id="" required placeholder="Пароль"></p>

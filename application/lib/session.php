@@ -13,9 +13,10 @@
 			else return false;
 		}
 
-		static function authorization($isAdminAuth = false,$isAuth,$login)
+		static function authorization($isAdminAuth = false, $isAuth, $login)
 		{
 			$_SESSION["isAdminAuth"] = $isAdminAuth;
+			$_SESSION["themMode"] = false;
 			$_SESSION["isAuth"] = $isAuth;
 			$_SESSION["login"] = $login;
 		}
@@ -24,6 +25,7 @@
 		{
 			return [
 				"isAdminAuth" => $_SESSION["isAdminAuth"],
+				"themMode" => $_SESSION["themMode"],
 				"isAuth" => $_SESSION["isAuth"],
 				"login" => $_SESSION["login"],
 			];
