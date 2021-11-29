@@ -43,6 +43,12 @@
 
 		public function HomeAction()
 		{
+			if(!(session::getDate()["isAuth"]))
+				return header("Location: login");
+
+			$this->requst = [
+				"TestInfo" => $this->model->datebase->getAlldate("SELECT * FROM tests"),
+			];
 			$this->view->LoadDesign($this->requst);
 		}
 	}

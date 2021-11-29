@@ -15,7 +15,7 @@
 
 		public function dbConnect()
 		{
-			$this->mysqlConnect = mysqli_connect($this->profile['host'], $this->profile['user'], $this->profile['pass'], $this->profile['dbname']);
+			$this->mysqlConnect = mysqli_connect($this->profile["host"], $this->profile["user"], $this->profile["pass"], $this->profile["dbname"]);
 
 			if (!($this->mysqlConnect))
 				View::Exception(401);
@@ -32,8 +32,15 @@
 				$this->mysqlConnect->close();
 				return $result;
 			}
-			else
-				return null;
+			else return null;
+		}
+
+		public function getAllDate($query)
+		{
+			$this->dbConnect();
+			$requst = mysqli_query($this->mysqlConnect, $query);
+			$rows = mysqli_fetch_all($requst,MYSQLI_ASSOC);
+			return $rows;
 		}
 
 		public function updateDate($query)

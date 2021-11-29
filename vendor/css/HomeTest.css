@@ -11,10 +11,15 @@ body{
     overflow-x:hidden;
 }
 
+#logo{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
 #leftMenu{ /*Левый столб страницы*/
  position: fixed;
  left: 0;
- width: 150px;
+ width: 15px;
  height: 100%;
   /*Чтобы на ровном месте не появлялся скролл*/
  background-color:rgb(99, 147, 221);
@@ -111,7 +116,8 @@ body{
 }
 .test{ /*Настройка самих тем*/
     display: flex;
-    height: 80px;
+    height: auto;
+    min-height: 80px;
     width: 90%;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     margin: 18px auto;
@@ -120,9 +126,10 @@ body{
     
 }
 .text{
+    padding: 10px;
     display: block;
     align-self: center;
-    font-weight: bold;
+    font-weight: medium;
     font-size: 18px;
     padding-left: 30px;
     width: 780px;
@@ -131,8 +138,9 @@ body{
   background-color:rgb(121, 165, 231);
   color: white;
   width: 22%;
-  height: 100%;
+/*  height: 100%;  Проработать дизайн кнопок  */
   border: 0px;
+  border-radius: 5px 0% 0% 100% 0%;
   cursor: pointer;
   transition: 0.5s all ease;
   font-size: 1.2em;

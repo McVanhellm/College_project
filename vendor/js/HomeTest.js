@@ -6,6 +6,9 @@ function ready(){
     document.getElementById('level_four').hidden = true;
     document.getElementById('level_five').hidden = true;
     document.getElementById('level_six').hidden = true;
+
+    first_level.classList.add('selected');
+    document.getElementById('level_one').hidden = false;
 }
 const levels = document.querySelectorAll(".levels")
 const first = document.querySelector("#first_level")

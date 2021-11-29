@@ -13,11 +13,7 @@
 			else return false;
 		}
 
-<<<<<<< HEAD
 		static function authorization($isAdminAuth = false, $isAuth, $login, $avatar)
-=======
-		static function authorization($isAdminAuth = false, $isAuth, $login)
->>>>>>> b9f8432bf30086df27fd3fd47f5fc1f3df72c6ed
 		{
 			$_SESSION["isAdminAuth"] = $isAdminAuth;
 			$_SESSION["themMode"] = false;
