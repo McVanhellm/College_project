@@ -8,19 +8,19 @@
 </head>
 <body>
     <header>
-        <div class="logo-box">
+        <div class="logo-box unselectable">
             <a href=""><img src="../vendor/image/logo.png"></a>
         </div>
         <div class="level-information">
             <div class="text">
                 <div class="name-level">
-                    <div id="them-title" class="title">Термодинамика</div>
-                    <div id="them-level" class="sub-level">1 рубеж</div>
+                    <div id="them-title" class="title unselectable">Термодинамика</div>
+                    <div id="them-level" class="sub-level unselectable">1 рубеж</div>
                 </div>
                 <div class="free-spaces"></div>
                 <div class="quotes">
                     <div class="text">“Каждый человек может быть <br> умным человеком, ауф” P.s Тесла</div>
-                    <div class="icon">
+                    <div class="icon unselectable">
                         <img src="../vendor/image/tesla.png">
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                <div id="level_list"> <!-- Блок с уровнями -->
         <div id="subList"> <!-- Блок внутри для настройки -->
             <div id="dotted_line"></div>
-          <div class="levels" id="first_level">  <!-- Сам кружок(блок с радиусом 50%) -->
+          <div class="levels unselectable" id="first_level">  <!-- Сам кружок(блок с радиусом 50%) -->
           <div class="levels_number">1</div> <!-- Блок с цифрой внутри -->
           </div>
 
@@ -92,7 +92,7 @@
         <div class="alter-box">
             <div class="Achievement">
                 <div class="title">Достижения</div>
-                <div class="icon"><img src="../vendor/image/atom.png"></div>
+                <div class="icon unselectable"><img src="../vendor/image/atom.png"></div>
                 <div id="progressbar">
                   <div style="width:20%; height: 10px;"></div>
                 </div>
