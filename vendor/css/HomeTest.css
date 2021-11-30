@@ -1,79 +1,271 @@
-* /* Генеральные настройки всей страницы */
+*{ margin: 0; padding: 0; }
+
+header
 {
- margin: 0; /*Чинят автоматические отступы в браузере*/
- padding: 0; /*Чинят автоматическите отстпы в браузере*/
- font-family:Verdana, Geneva, Tahoma, sans-serif; /*Шрифт всей страницы*/
-}
-body{
-    display: flex;
-    height: 100%;
-    min-width: 1580px;
-    overflow-x:hidden;
+	display: flex;
+	height: 150px;
+
+	margin-bottom: 40px;
 }
 
-#logo{
-    margin-top: 20px;
-    margin-left: 30px;
+.logo-box
+{
+	width: 50%;
+
+	padding-left: 40px;
+	padding-top: 20px;
 }
 
-#leftMenu{ /*Левый столб страницы*/
- position: fixed;
- left: 0;
- width: 15px;
- height: 100%;
-  /*Чтобы на ровном месте не появлялся скролл*/
- background-color:rgb(99, 147, 221);
+.level-information
+{
+	width: 100%;
+	margin-top: 95px;
 }
-#rightMenu{ /*Правый столб страницы*/
-    right: 0;
-    margin-left: auto;
-    width: 200px;
-    height: 100%;
-    margin-top: -18px; /*Чтобы на ровном месте не появлялся скролл*/
+
+.level-information .text
+{
+	display: flex;
 }
-#userArea{
-   display: flex;
-   width: 200px;
-   height: 100px; 
-   align-items: center;
+
+
+.level-information .name-level .title
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	color: #797979;
+
+	width: 300px;
 }
-#userArea img{
+
+.level-information .name-level .sub-level
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	color: #797979;
+}
+
+.level-information .quotes
+{
+	display: flex;
+	width: 50%;
+	align-items: center;
+}
+
+.level-information .quotes .text
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	color: #797979;
+}
+
+.level-information .quotes .icon
+{
+	margin-left: 20px;
+}
+
+.account-icon
+{
+	width: 50%;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	color: #848484;
+}
+
+#userArea
+{
+	margin-left: 55%;
+	margin-top: 20px;
+}
+
+#userArea img
+{
     height: 50px;
     border-radius:50%;
     margin-left: 10px;   
 }
-#userInfo{
-    font-family: Verdana, sans-serif;
+#userInfo
+{
     display: flex;
     align-items: center;
 }
+
+.free-spaces
+{
+	width: 30%;
+}
+
+content
+{
+	display: flex;
+}
+
+.level-tree
+{
+	width: 50%;
+}
+
+.Task-list
+{
+	width: 100%;
+}
+
+.alter-box
+{
+	width: 50%;
+}
+
+.Task-list
+{
+	overflow: auto;
+}
+
+.alter-box .Achievement
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	color: #797979;
+
+	margin-left: 60px;
+	margin-right: 90px;
+}
+
+.alter-box .Achievement .title
+{
+	margin-bottom: 20px;
+}
+
+.alter-box .Achievement .sub-text
+{
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.alter-box .Achievement .icon
+{
+	margin-left: 30%;
+}
+
+.task
+{
+	background: #FFFFFF;
+	box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+
+	margin-top: 1%;
+
+	margin-left: 2%;
+
+	height: 72px;
+	width: 96%;
+
+	display: flex;
+}
+
+.task-text
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	/* identical to box height */
+	color: #000000;
+
+	display: block;
+    align-self: center;
+
+    margin-left: 30px;
+    width: 80%;
+}
+
+.task button{ /*Настройка кнопки в теме*/
+  background-color:rgb(121, 165, 231);
+  color: white;
+  width: 22%;
+  height: 100%;
+  border: 0px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: 0.5s all ease;
+  font-size: 1.2em;
+  min-width: 158px;
+}
+.task button:hover{ /*Кнопка при наводке на неё*/
+  background-color: rgb(26, 49, 85);  
+}
+
+.Task-list
+{
+	overflow: auto;
+	max-height: 700px;
+}
+
+::-webkit-scrollbar-button {
+  height: 310px; //for vertical scrollbar
+}
+
+.Task-list::-webkit-scrollbar {
+	width: 25px;
+	background: #F2F2F2;
+	border-radius: 5px;
+}
+
+.Task-list::-webkit-scrollbar-thumb {
+	background: #6393DC;
+	border-radius: 5px;
+
+	width: 25px;
+	height: 38px;
+}
+
 #level_list{ /*Столб 6-ти уровней*/
-    position: absolute;
+/*    position: absolute;
     left: 250px;
     height: 1000px;
     width: 85px;
-    margin-top: 50px;
+    margin-top: 50px;*/
 }
 #subList{ /*Блок внутри столб, для адекватной настройки*/
     display: flex;
     height: 100%;
     width: 100%;
-    margin-top: 100%;
+/*    margin-top: 100%;*/
     flex-flow: column;
     align-items: center;
 }
 #dotted_line{
     position: absolute;
-    margin-top: 100px;
-    height: 600px;
+/*    margin-top: 100px;*/
+    height: 450px;
     border-right: 3px dotted rgba(133, 133, 133, 0.438);
     z-index: 0;
 }
+
+.levels-margin
+{
+	margin-top: 20px;
+}
+
 .levels{ /*Кружки уровней*/
     display: flex;
     height: 50px;
     width: 50px;
-    margin-top: 60px;
+/*    margin-top: 60px;*/
     border: 3px solid rgb(121, 165, 231);
     border-radius: 50%;
     align-items: center;
@@ -97,7 +289,12 @@ body{
     color: white;
 }
 .levels_number{ /*Цифры внутри кружков*/
-  font-size: 1.5em;
+ 	font-size: 1.5em;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
 }
 #first_level{ /*Первый кружок(уровень)*/
     height: 70px;
@@ -107,45 +304,44 @@ body{
     height: 70px;
     width: 70px;
 }
-.content{ /*Блок с темами*/
-    height: 100%;
-    width: 50%;
-    min-width: 800px;
-    margin: 0 10% 0 25%;
-    
+
+.them-circle
+{
+	background: #FFFFFF;
+	border: 3px solid #699BE5;
+	border-radius: 35px;
+	box-sizing: border-box;
+
+	width: 65px;
+	height: 65px;
+
+	text-align: center;
 }
-.test{ /*Настройка самих тем*/
-    display: flex;
-    height: auto;
-    min-height: 80px;
-    width: 90%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    margin: 18px auto;
-    border-radius: 5px;
-    justify-content: space-between; 
-    
+
+.sub-circle
+{
+	background: #FFFFFF;
+	border: 3px solid #699BE5;
+	border-radius: 25px;
+	box-sizing: border-box;
+
+	width: 50px;
+	height: 50px;
 }
-.text{
-    padding: 10px;
-    display: block;
-    align-self: center;
-    font-weight: medium;
-    font-size: 18px;
-    padding-left: 30px;
-    width: 780px;
+
+.level-tree
+{
+	padding-top: 5%;
 }
-.test button{ /*Настройка кнопки в теме*/
-  background-color:rgb(121, 165, 231);
-  color: white;
-  width: 22%;
-/*  height: 100%;  Проработать дизайн кнопок  */
-  border: 0px;
-  border-radius: 5px 0% 0% 100% 0%;
-  cursor: pointer;
-  transition: 0.5s all ease;
-  font-size: 1.2em;
-  min-width: 158px;
+
+#progressbar {
+	margin-top: 5px;
+  background-color: #C4C4C4;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
-.test button:hover{ /*Кнопка при наводке на неё*/
-  background-color: rgb(26, 49, 85);  
+
+#progressbar>div {
+  background-color: #6393DC;
+  border-radius: 5px;
 }

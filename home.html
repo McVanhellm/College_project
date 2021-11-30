@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Тесты</title>
+</head>
+
+<style type="text/css">
+	
+*{ margin: 0; padding: 0; }
+
+header
+{
+	display: flex;
+	height: 150px;
+
+	margin-bottom: 40px;
+}
+
+.logo-box
+{
+	width: 50%;
+
+	padding-left: 40px;
+	padding-top: 20px;
+}
+
+.level-information
+{
+	width: 100%;
+	margin-top: 95px;
+}
+
+.level-information .text
+{
+	display: flex;
+}
+
+
+.level-information .name-level .title
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	color: #797979;
+
+	width: 300px;
+}
+
+.level-information .name-level .sub-level
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	color: #797979;
+}
+
+.level-information .quotes
+{
+	display: flex;
+	width: 50%;
+	align-items: center;
+}
+
+.level-information .quotes .text
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	color: #797979;
+}
+
+.level-information .quotes .icon
+{
+	margin-left: 20px;
+}
+
+.account-icon
+{
+	width: 50%;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	color: #848484;
+}
+
+#userArea
+{
+	margin-left: 55%;
+	margin-top: 20px;
+}
+
+#userArea img
+{
+    height: 50px;
+    border-radius:50%;
+    margin-left: 10px;   
+}
+#userInfo
+{
+    display: flex;
+    align-items: center;
+}
+
+.free-spaces
+{
+	width: 30%;
+}
+
+</style>
+
+
+<style type="text/css">
+
+content
+{
+	display: flex;
+}
+
+.level-tree
+{
+	width: 50%;
+}
+
+.Task-list
+{
+	width: 100%;
+}
+
+.alter-box
+{
+	width: 50%;
+}
+
+.Task-list
+{
+	overflow: auto;
+}
+
+.alter-box .Achievement
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	color: #797979;
+
+	margin-left: 60px;
+	margin-right: 90px;
+}
+
+.alter-box .Achievement .title
+{
+	margin-bottom: 20px;
+}
+
+.alter-box .Achievement .sub-text
+{
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.alter-box .Achievement .icon
+{
+	margin-left: 30%;
+}
+
+.task
+{
+	background: #FFFFFF;
+	box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+
+	margin-top: 1%;
+
+	margin-left: 2%;
+
+	height: 72px;
+	width: 96%;
+
+	display: flex;
+}
+
+.task-text
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	/* identical to box height */
+	color: #000000;
+
+	display: block;
+    align-self: center;
+
+    margin-left: 30px;
+    width: 80%;
+}
+
+.task button{ /*Настройка кнопки в теме*/
+  background-color:rgb(121, 165, 231);
+  color: white;
+  width: 22%;
+  height: 100%;
+  border: 0px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: 0.5s all ease;
+  font-size: 1.2em;
+  min-width: 158px;
+}
+.task button:hover{ /*Кнопка при наводке на неё*/
+  background-color: rgb(26, 49, 85);  
+}
+
+.Task-list
+{
+	overflow: auto;
+	max-height: 700px;
+}
+
+::-webkit-scrollbar-button {
+  height: 310px; //for vertical scrollbar
+}
+
+.Task-list::-webkit-scrollbar {
+	width: 25px;
+	background: #F2F2F2;
+	border-radius: 5px;
+}
+
+.Task-list::-webkit-scrollbar-thumb {
+	background: #6393DC;
+	border-radius: 5px;
+
+	width: 25px;
+	height: 38px;
+}
+
+#level_list{ /*Столб 6-ти уровней*/
+/*    position: absolute;
+    left: 250px;
+    height: 1000px;
+    width: 85px;
+    margin-top: 50px;*/
+}
+#subList{ /*Блок внутри столб, для адекватной настройки*/
+    display: flex;
+    height: 100%;
+    width: 100%;
+/*    margin-top: 100%;*/
+    flex-flow: column;
+    align-items: center;
+}
+#dotted_line{
+    position: absolute;
+/*    margin-top: 100px;*/
+    height: 450px;
+    border-right: 3px dotted rgba(133, 133, 133, 0.438);
+    z-index: 0;
+}
+
+.levels-margin
+{
+	margin-top: 20px;
+}
+
+.levels{ /*Кружки уровней*/
+    display: flex;
+    height: 50px;
+    width: 50px;
+/*    margin-top: 60px;*/
+    border: 3px solid rgb(121, 165, 231);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: rgb(99, 147, 221);
+    cursor: pointer;
+    transition: 0.5s all ease;
+    background-color: white;
+    z-index: 1;
+    opacity: 1;
+    
+}
+.selected{
+    background-color: rgb(121, 165, 231);
+    color: white;
+    width: 70px;
+    height: 70px;
+}
+.levels:focus{
+    background-color: rgb(121, 165, 231);
+    color: white;
+}
+.levels_number{ /*Цифры внутри кружков*/
+ 	font-size: 1.5em;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+}
+#first_level{ /*Первый кружок(уровень)*/
+    height: 70px;
+    width: 70px;
+}
+#sixth_level{ /*Последний кружок(уровень)*/
+    height: 70px;
+    width: 70px;
+}
+</style>
+
+<style type="text/css">
+	
+.them-circle
+{
+	background: #FFFFFF;
+	border: 3px solid #699BE5;
+	border-radius: 35px;
+	box-sizing: border-box;
+
+	width: 65px;
+	height: 65px;
+
+	text-align: center;
+}
+
+.sub-circle
+{
+	background: #FFFFFF;
+	border: 3px solid #699BE5;
+	border-radius: 25px;
+	box-sizing: border-box;
+
+	width: 50px;
+	height: 50px;
+}
+
+.level-tree
+{
+	padding-top: 5%;
+}
+
+#progressbar {
+	margin-top: 5px;
+  background-color: #C4C4C4;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#progressbar>div {
+  background-color: #6393DC;
+  border-radius: 5px;
+}
+
+</style>
+
+<body>
+	<header>
+		<div class="logo-box">
+			<a href=""><img src="vendor/image/logo.png"></a>
+		</div>
+		<div class="level-information">
+			<div class="text">
+				<div class="name-level">
+					<div id="them-title" class="title">Термодинамика</div>
+					<div id="them-level" class="sub-level">1 рубеж</div>
+				</div>
+				<div class="free-spaces"></div>
+				<div class="quotes">
+					<div class="text">“Каждый человек может быть <br> умным человеком, ауф” P.s Тесла</div>
+					<div class="icon">
+						<img src="vendor/image/tesla.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="account-icon">
+	        <div id="userArea">
+	          <div id="userInfo"> xoheveras <img src="vendor/avatar/xoheveras.gif"> </div> 
+	        </div>
+		</div>
+	</header>
+	<content>
+		<div class="level-tree">
+<!-- 			<div class="them-circle">1</div>
+			<div class="sub-circle">2</div>
+			<div class="shtrih-line"></div> -->
+			   <div id="level_list"> <!-- Блок с уровнями -->
+        <div id="subList"> <!-- Блок внутри для настройки -->
+            <div id="dotted_line"></div>
+          <div class="levels" id="first_level">  <!-- Сам кружок(блок с радиусом 50%) -->
+          <div class="levels_number">1</div> <!-- Блок с цифрой внутри -->
+          </div>
+
+          <div class="levels levels-margin" id="second_level"> 
+          <div class="levels_number">2</div>    
+          </div>
+          
+          <div class="levels levels-margin" id="third_level"> 
+            <div class="levels_number">3</div>    
+          </div>
+          
+          <div class="levels levels-margin" id="fourth_level"> 
+            <div class="levels_number">4</div>    
+          </div>
+          
+          <div class="levels levels-margin" id="fifth_level"> 
+            <div class="levels_number">5</div>    
+          </div>
+          
+          <div class="levels levels-margin" id="sixth_level"> 
+            <div class="levels_number">6</div>    
+          </div>
+      
+        </div>
+    </div>
+		</div>
+		<div class="Task-list">
+			<div id="level_one">
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+			</div>
+			<div id="level_two">
+				<div class="task">
+					<div class="task-text">Тема 9 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+			</div>
+			<div id="level_three">
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+			</div>
+			<div id="level_four">
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+			</div>
+			<div id="level_five">
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+			</div>
+			<div id="level_six">
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+				<div class="task">
+					<div class="task-text">Тема 8 - Термодинамика</div>
+					<button>Начать</button>
+				</div>
+			</div>
+		</div>
+		<div class="alter-box">
+			<div class="Achievement">
+				<div class="title">Достижения</div>
+				<div class="icon"><img src="vendor/image/atom.png"></div>
+				<div id="progressbar">
+				  <div style="width:20%; height: 10px;"></div>
+				</div>
+				<div class="sub-text">Пройдите еще 5 уроков до<br>получения награды “Атамнулся”</div>
+			</div>
+			<div class="auther-course">
+				<div class="title"></div>
+				<div class="users"></div>
+			</div>
+		</div>
+	</content>
+	<footer>
+	</footer>
+	<script src="vendor/js/HomeTest.js"></script>
+</body>
+</html>
