@@ -15,7 +15,7 @@
 			if($requst == null)
 			{
 				$password = md5($password);
-				$this->datebase->updatedate("INSERT INTO users (id,login,password,email) VALUES(NULL,'$login','$password','$email')");
+				$this->datebase->updatedate("INSERT INTO users (id,login,password,email,avatar) VALUES(NULL,'$login','$password','$email','')");
 				return header("Location: ../account/home");
 			}
 			else
@@ -32,7 +32,7 @@
 				if($requst['password'] == md5($password))
 				{
 					if(session::isAuth("isAuth") != true)
-						session::authorization(false,true,$login,$requst["avatar"]);
+						session::authorization(true,$login,$requst["avatar"]);
 					return header("Location: ../account/home");
 				}
 				return "Неверный пароль";

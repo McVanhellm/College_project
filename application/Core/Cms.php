@@ -1,12 +1,14 @@
 <?php 
 
-	# Getting raw links to styles
+	# Getting raw url in github repository 
+	#	$path -> sub folder in cms_vendor
+	#	$file -> finded file
 	function getRaw($path, $file)
 	{
 		return file_get_contents("https://raw.githubusercontent.com/xoheveras/CMS/main/cms_vendor/".$path."/".$file);
 	}
 
-	# Search for files that are responsible for the design of pages
+	# Searching PHP(View folder) file in project
 	function searchPHP()
 	{
 		$phpFileList = [];
@@ -27,7 +29,8 @@
 		return $phpFileList;
 	}
 	
-	# Search for files that are responsible for page styles
+	# Searching type(css,js) file in project 
+	#	$type -> find file type in folders
 	function searchStyleAndJs($type)
 	{
 		$cssFileList = [];
@@ -41,6 +44,8 @@
 		return $cssFileList;
 	}
 
+	# Searching and open file in folders	
+	#	$filename -> find file in folders
 	function openfile($fileName)
 	{
 		$url = [

@@ -1,8 +1,3 @@
-<?php 
-	if(session::isAuth("isAdminAuth"))
-		header("Location: panel");
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,18 +21,8 @@
 					<p><input class="text-field__input" type="text" name="login" required placeholder="Логин"></p>
 					<p><input class="text-field__input" type="password" name="password" required placeholder="Пароль"></p>
 					<?php
-						if(isset($_POST["aloginbtn"]))
-						{
-							if($_POST['login'] != "root" && $_POST['password'] != "root")
-							{
-								echo "<div class='warning'><p> Access denied </p></div>";
-							}
-							else
-							{
-								session::authorization($isAdminAuth = true);
-								return header("Location: panel");
-							}
-						}
+						if(isset($args["message"]))
+							echo $args["message"];
 					?>
 					<input class="btn" type="submit" name="aloginbtn" value="Войти"/>
 				</form>

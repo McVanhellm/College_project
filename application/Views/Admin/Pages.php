@@ -58,14 +58,14 @@
 
 		<style type="text/css"> 
 			<?php
-				if(session::getDate()["themMode"])
+				if($_SESSION["themMode"])
 					echo getRaw("css","pagesDark.css"); 
 				else
 					echo getRaw("css","pagesLight.css");
 			?>
 		</style>
 		<script type="text/javascript">
-			<?php echo file_get_contents("cms_vendor/js/panel.js") ?>
+			<?php echo getRaw("js","panel.js") ?>
 		</script>
 	</body>
 </html>

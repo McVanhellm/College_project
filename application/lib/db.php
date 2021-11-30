@@ -15,12 +15,15 @@
 
 		public function dbConnect()
 		{
-			$this->mysqlConnect = mysqli_connect($this->profile["host"], $this->profile["user"], $this->profile["pass"], $this->profile["dbname"]);
+			$this->mysqlConnect = mysqli_connect($this->profile['host'], $this->profile['user'], $this->profile['pass'], $this->profile['dbname']);
 
 			if (!($this->mysqlConnect))
 				View::Exception(401);
 		}
 
+
+		# Getting data in base as query	
+		# $query -> query (Exemple - SELECT * FROM <table>)
 		public function getDate($query)
 		{
 			$this->dbConnect();
@@ -32,9 +35,12 @@
 				$this->mysqlConnect->close();
 				return $result;
 			}
-			else return null;
+			else
+				return null;
 		}
 
+		# Get all data as query
+		# $query -> query (Exemple - SELECT * FROM ....)
 		public function getAllDate($query)
 		{
 			$this->dbConnect();
@@ -43,6 +49,9 @@
 			return $rows;
 		}
 
+		
+		# Update data
+		# $query -> query (Exemple - UPDATE ....)
 		public function updateDate($query)
 		{
 			$this->dbConnect();

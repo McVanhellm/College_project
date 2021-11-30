@@ -43,7 +43,7 @@
 
 		public function HomeAction()
 		{
-			if(!(session::getDate()["isAuth"]))
+			if($_SESSION["isAuth"] == false)
 				return header("Location: login");
 
 			$this->requst = [

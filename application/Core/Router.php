@@ -15,6 +15,8 @@
 				array_push($this->routesPath, $key);
 
 			$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+			# Allowed project files 
 			if (strpos($path, '.png') !== false || strpos($path, '.jpg') !== false || strpos($path, '.gif') !== false || strpos($path, '.js') !== false) 
 			{
 				$path = $this->getPath();
