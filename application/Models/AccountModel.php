@@ -14,14 +14,16 @@
 			$requst = $this->datebase->getdate("SELECT * FROM users WHERE login='".$login."'");
 			if($requst == null)
 			{
+				/* Input checks */
+				if($this->datebase->getdate("SELECT * FROM users WHERE email='".$email."'") != null) return "Пользователь с такой почтой уже существует";
+				if(strlen($password) > 35 || strlen($password) < 6) return "Пароль должен быть не менее 6 и не более 35 символов";
+
+				/* Create account */
 				$password = md5($password);
-				$this->datebase->updatedate("INSERT INTO users (id,login,password,email,avatar) VALUES(NULL,'$login','$password','$email','')");
-				return header("Location: ../account/home");
+				$this->datebase->updatedate("INSERT INTO users (id,login,password,email,avatar) VALUES(NULL,'$login','$password','$email','noimg.png')");
+				return header("Location: ../account/login");
 			}
-			else
-			{
-				return "Такой аккаунт уже существует";
-			}
+			else return "Такой аккаунт уже существует";
 		}
 
 		public function AuthorizationAccount($login, $password)
@@ -35,9 +37,9 @@
 						session::authorization(true,$login,$requst["avatar"]);
 					return header("Location: ../account/home");
 				}
-				return "Неверный пароль";
+				else return "Неверный пароль";
 			}
-			return "Неверный логин";
+			else return "Неверный логин";
 		}
 	}
 ?>
