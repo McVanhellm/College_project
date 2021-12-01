@@ -1,7 +1,7 @@
 <?php 
 
 	return [
-		'host' => "localhost",
+		'host' => "localhost:8889",
 		"dbname" => "fizikpro",
 		"user" => "root",
 		"pass" => "root",
