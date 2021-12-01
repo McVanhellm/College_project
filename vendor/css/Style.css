@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
 .intro{/*Скролинг и растановка анимации фона*/
  height: 145vh;
  text-align: center;
