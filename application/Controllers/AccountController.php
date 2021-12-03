@@ -51,7 +51,7 @@
 
 			$this->requst = [
 				"TestInfo" => $this->model->datebase->getAlldate("SELECT * FROM tests"),
-				"Achivment" => $this->model->datebase->getAlldate("SELECT * FROM achievement WHERE id = ".$_SESSION['id']),
+				"Achivment" => $this->model->datebase->getAlldate("SELECT * FROM achievement WHERE userid = ".$_SESSION['id']),
 			];
 			$this->view->LoadDesign($this->requst);
 		}

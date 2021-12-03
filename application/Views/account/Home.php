@@ -91,22 +91,30 @@
             ?>
         </div>
         <div class="alter-box">
+            <?php $HomeAcivement = Achievement::getAchievement($args["Achivment"]); ?>
             <div class="Achievement">
                 <div class="title">Достижения</div>
-                <div class="icon unselectable"><img src="../vendor/image/atom.png"></div>
+                <div class="icon unselectable"><?php echo '<img src="../vendor/image/'.$HomeAcivement['Ainfo']['img'].'">' ?></div>
                 <div id="progressbar">
-                  <div style="width:20%; height: 10px;"></div>
+                  <?php 
+                        $progressValue = (int)$HomeAcivement['value']/(int)$HomeAcivement['Ainfo']['value'];
+                        $progressValue = Abs(round($progressValue * ($progressValue - 100)));
+                        echo '<div style="width:'.$progressValue.'%; height: 10px;"></div>';
+                    ?>
                 </div>
-                <div class="sub-text">Пройдите еще 5 уроков до<br>получения награды “Атамнулся”</div>
+                <div class="sub-text">Пройдите еще <?php echo $HomeAcivement['remainder'] ?> уроков до<br>получения награды “<?php echo $HomeAcivement['Ainfo']['name']?>”</div>
             </div>
             <div class="auther-course">
-                <div class="title"></div>
-                <div class="users"></div>
+                <div class="title">Авторы курса</div>
+                <div class="users">
+                    <div id="userArea">
+                        <a href="../forum?uid=McVanhellm"><div id="userInfo"><img src="../vendor/avatar/McVanhellm.png">McVanhellm</div> </a>
+                    </div>
+                </div>
             </div>
         </div>
     </content>
     <footer>
-        <?php echo_log($args["Achivment"]); ?>
     </footer>
     <style type="text/css"> 
         <?php echo file_get_contents("vendor/css/HomeTest.css"); ?>

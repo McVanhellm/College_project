@@ -21,6 +21,14 @@
 				/* Create account */
 				$password = md5($password);
 				$this->datebase->updatedate("INSERT INTO users (id,login,password,email,avatar) VALUES(NULL,'$login','$password','$email','noimg.png')");
+
+				/* Get user id */
+				$userid = $this->datebase->getdate("SELECT id FROM users WHERE login='".$login."'")['id'];
+
+				/* Add achivment row */
+				$this->datebase->updatedate("INSERT INTO achievement (id,userid,idachiv,value,fineValue) VALUES(NULL,$userid,1,0,15)");
+				# More achivment
+
 				return header("Location: ../account/login");
 			}
 			else return "Такой аккаунт уже существует";
