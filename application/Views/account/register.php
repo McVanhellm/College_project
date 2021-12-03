@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Регистрация</title>
+		<meta name="viewport" content="width=device-width, user-scalable=yes">
 	</head>
 	<body>
 		<svg  xmlns="http://www.w3.org/2000/svg" >
