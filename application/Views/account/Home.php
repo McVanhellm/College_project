@@ -106,6 +106,7 @@
         </div>
     </content>
     <footer>
+        <?php echo_log($args["Achivment"]); ?>
     </footer>
     <style type="text/css"> 
         <?php echo file_get_contents("vendor/css/HomeTest.css"); ?>

@@ -1,5 +1,6 @@
 <?php 
-
+	
+	require_once("application/Lib/achievement.php"); // achievement
 	require_once("application/Lib/session.php"); // session
 	require_once("application/Lib/db.php"); // Mysql Profile
 	require_once("application/Lib/debug.php"); 	// Debug Mode
