@@ -396,3 +396,43 @@ content
   background-color: #6393DC;
   border-radius: 5px;
 }
+
+@media screen and (max-width : 1024px) 
+{
+	/*  Header */
+	.level-information .quotes { display: none; }
+}
+@media screen and (max-width : 426px) 
+{
+	/*  Header */
+	header { display: block; height: auto; }
+	.level-information .quotes { display: none; }
+	.level-information .text { display: block; }
+	.level-information { margin-left: 12%; width: 30%; margin-top: 30px; }
+	.account-icon { display: none; }
+
+	/* Conetent */
+	content { display: block; }
+	.level-tree { padding-top: 0; }
+	#level_list { margin-left: 100%; margin-bottom: 25px; }
+	.alter-box .Achievement { width: 300px; height: auto; margin-top: 25px; margin-left: 35px; margin-right: 0;}
+	.alter-box .auther-course { width: 300px; height: auto; margin-top: 25px; margin-left: 35px; margin-right: 0; }
+}
+
+@media screen and (max-width : 320px) 
+{
+	/*  Header */
+	header { display: block; height: auto; }
+	.level-information .quotes { display: none; }
+	.level-information .text { display: block; }
+	.level-information { margin-left: 12%; width: 30%; margin-top: 30px; }
+	.account-icon { display: none; }
+
+	/* Conetent */
+	content { display: block; }
+	.level-tree { padding-top: 0; }
+	#level_list { margin-left: 100%; margin-bottom: 25px; }
+	.alter-box .Achievement { width: 250px; height: auto; margin-top: 25px; margin-left: 35px; margin-right: 0;}
+	.alter-box .auther-course { width: 250px; height: auto; margin-top: 25px; margin-left: 35px; margin-right: 0; }
+
+}
