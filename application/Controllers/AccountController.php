@@ -14,6 +14,9 @@
 
 		public function LoginAction()
 		{
+			if(isset($_SESSION["isAuth"]) == true)
+				return header("Location: home");
+
 			if(isset($_POST["loginbtn"]))
 			{
 				$receivedLogin = strip_tags($_POST['login']);
@@ -48,6 +51,7 @@
 
 			$this->requst = [
 				"TestInfo" => $this->model->datebase->getAlldate("SELECT * FROM tests"),
+				"Achivment" => $this->model->datebase->getAlldate("SELECT * FROM achievement WHERE userid = ".$_SESSION['id']),
 			];
 			$this->view->LoadDesign($this->requst);
 		}

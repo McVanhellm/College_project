@@ -123,3 +123,8 @@ document.getElementById('sixth_level').onclick = function(){
     sixth_level.classList.add('selected');
   
 }
+
+showMenu()
+{
+    alert("Меню открыто");
+}

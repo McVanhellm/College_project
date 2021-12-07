@@ -161,6 +161,44 @@ content
 	margin-bottom: 20px;
 }
 
+.auther-course
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	color: #797979;
+
+	margin-top: 30px;
+	margin-left: 60px;
+	margin-right: 90px;
+}
+
+.auther-course a
+{
+	text-decoration: none;
+	color: #797979;
+}
+
+.auther-course #userArea
+{
+	margin-left: 0%;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.auther-course #userArea img
+{
+    height: 40px;
+    border-radius:50%;
+    margin-right: 10px;   
+}
+.auther-course #userInfo
+{
+    display: flex;
+}
+
 .alter-box .Achievement .sub-text
 {
 	font-weight: normal;
@@ -172,6 +210,7 @@ content
 {
 	margin-left: 30%;
 }
+
 
 .task
 {
@@ -356,4 +395,44 @@ content
 #progressbar>div {
   background-color: #6393DC;
   border-radius: 5px;
+}
+
+@media screen and (max-width : 1024px) 
+{
+	/*  Header */
+	.level-information .quotes { display: none; }
+}
+@media screen and (max-width : 426px) 
+{
+	/*  Header */
+	header { display: block; height: auto; }
+	.level-information .quotes { display: none; }
+	.level-information .text { display: block; }
+	.level-information { margin-left: 12%; width: 30%; margin-top: 30px; }
+	.account-icon { display: none; }
+
+	/* Conetent */
+	content { display: block; }
+	.level-tree { padding-top: 0; }
+	#level_list { margin-left: 100%; margin-bottom: 25px; }
+	.alter-box .Achievement { width: 300px; height: auto; margin-top: 25px; margin-left: 35px; margin-right: 0;}
+	.alter-box .auther-course { width: 300px; height: auto; margin-top: 25px; margin-left: 35px; margin-right: 0; }
+}
+
+@media screen and (max-width : 320px) 
+{
+	/*  Header */
+	header { display: block; height: auto; }
+	.level-information .quotes { display: none; }
+	.level-information .text { display: block; }
+	.level-information { margin-left: 12%; width: 30%; margin-top: 30px; }
+	.account-icon { display: none; }
+
+	/* Conetent */
+	content { display: block; }
+	.level-tree { padding-top: 0; }
+	#level_list { margin-left: 100%; margin-bottom: 25px; }
+	.alter-box .Achievement { width: 250px; height: auto; margin-top: 25px; margin-left: 35px; margin-right: 0;}
+	.alter-box .auther-course { width: 250px; height: auto; margin-top: 25px; margin-left: 35px; margin-right: 0; }
+
 }

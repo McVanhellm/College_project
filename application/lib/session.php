@@ -13,10 +13,11 @@
 			else return false;
 		}
 
-		static function authorization($isAuth, $login, $avatar)
+		static function authorization($isAuth, $id, $login, $avatar)
 		{
 			$_SESSION["themMode"] = false;
 			$_SESSION["isAuth"] = $isAuth;
+			$_SESSION["id"] = $id;
 			$_SESSION["login"] = $login;
 			$_SESSION["avatar"] = $avatar;
 		}
