@@ -23,7 +23,10 @@
 			if(isset($_GET["id"]))
 			{
 				$this->requst = [
-					"topics" => $this->model->datebase->getAlldate("SELECT * FROM fthems"),
+					"auther" => $this->model->datebase->getdate("SELECT autherid FROM fthems WHERE id=".$_GET['id']),
+					"title" => $this->model->datebase->getdate("SELECT title FROM fthems WHERE id=".$_GET['id']),
+					"contentHTML" => $this->model->datebase->getdate("SELECT contentHTML FROM fthems WHERE id=".$_GET['id']),
+					"mark" => $this->model->datebase->getdate("SELECT mark FROM fthems WHERE id=".$_GET['id']),
 				];
 				$this->view->LoadDesign($this->requst);
 			}
