@@ -7,7 +7,7 @@
 	
 	*/
 
-	class #name# extends Model
+	class ForumModel extends Model
 	{
 
 	}	

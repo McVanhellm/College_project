@@ -30,6 +30,25 @@
 			'controller' => 'Admin',
 			'action' => 'plugins',
 		],
+		
+		/*
+			Forum
+		*/
+
+		'forum/lk' => [
+			'controller' => 'Forum',
+			'action' => 'lk',
+		],
+
+		'forum/topic' => [
+			'controller' => 'Forum',
+			'action' => 'topic',
+		],
+
+		'forum' => [
+			'controller' => 'Forum',
+			'action' => 'main',
+		],
 
 		/*
 			User site
