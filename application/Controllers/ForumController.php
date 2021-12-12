@@ -28,6 +28,7 @@
 				$this->requst = [
 					"topicInfo" => $topicInfo,
 					"autherName" => $this->model->datebase->getdate("SELECT login FROM users WHERE id=".$topicInfo["autherid"]),
+					"autherImg" => $this->model->datebase->getdate("SELECT avatar FROM users WHERE id=".$topicInfo["autherid"])
 
 				];
 				$this->view->LoadDesign($this->requst);

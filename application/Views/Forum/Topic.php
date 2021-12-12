@@ -5,9 +5,7 @@
 		<title><?php echo $args["topicInfo"]["title"]; ?></title>
 	</head>
 	<body>
-		<?php 
-
-		echo_log($args);
+		<?php
 
 		echo "<div>";
 		echo "<h2>".$args["topicInfo"]["title"]."</h2>";
@@ -20,6 +18,8 @@
 		echo "<div> Автор: ";
 		echo $args["autherName"]["login"];
 		echo "</div>";
+
+		echo "<img src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>"
 
 		?>
 		<hr/>
