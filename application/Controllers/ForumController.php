@@ -22,8 +22,13 @@
 
 			if(isset($_GET["id"]))
 			{
+
+				$topicInfo = $this->model->datebase->getdate("SELECT * FROM fthems WHERE id=".$_GET['id']);
+
 				$this->requst = [
-					"topicInfo" => $this->model->datebase->getdate("SELECT * FROM fthems WHERE id=".$_GET['id']),
+					"topicInfo" => $topicInfo,
+					"autherName" => $this->model->datebase->getdate("SELECT login FROM users WHERE id=".$topicInfo["autherid"]),
+
 				];
 				$this->view->LoadDesign($this->requst);
 			}

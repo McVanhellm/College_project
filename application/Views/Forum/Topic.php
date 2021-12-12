@@ -7,6 +7,8 @@
 	<body>
 		<?php 
 
+		echo_log($args);
+
 		echo "<div>";
 		echo "<h2>".$args["topicInfo"]["title"]."</h2>";
 		echo "</div>";
@@ -16,7 +18,7 @@
 		echo "</div>";
 
 		echo "<div> Автор: ";
-		echo $args["topicInfo"]["autherid"];
+		echo $args["autherName"]["login"];
 		echo "</div>";
 
 		?>

@@ -38,7 +38,7 @@
 			else
 				return null;
 		}
-
+		
 		# Get all data as query
 		# $query -> query (Exemple - SELECT * FROM ....)
 		public function getAllDate($query)
