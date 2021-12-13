@@ -41,7 +41,7 @@
 
 		public function lkAction()
 		{
-			return;
+			$this->view->LoadDesign();
 		}
 	}
 

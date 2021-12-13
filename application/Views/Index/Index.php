@@ -124,7 +124,7 @@
 	<ul>
 		<li><a class="navLink" href="account/home">Личный кабинет</a></li>
 		<li><a class="navLink" href="ContactHead.html">Разработчики</a></li>
-		<li><a class="navLink" href="Contact.html">Форум</a></li>
+		<li><a class="navLink" href="forum">Форум</a></li>
 	</ul>
 	</div>
 	<div class="content">
