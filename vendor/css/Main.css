@@ -124,3 +124,83 @@ header
 
 	margin-top: 10px;
 }
+
+.topic-title{
+	display: flex;
+}
+
+.topic-title .text{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	color: #000000;
+
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+.topic-title .marks{
+	margin-top: 15px;
+	margin-left: 10px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	width: auto;
+	height: 17px;
+
+	padding-left: 10px;
+	padding-right: 10px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 16px;
+	/* identical to box height */
+
+
+	color: #FFFFFF;
+}
+
+.mark-warning
+{
+	background: #E57169;
+}
+
+.mark-Authorship
+{
+	background: #699BE5;
+}
+
+.mark-info
+{
+	background: #2E2E2E;
+}
+
+.mark-article
+{
+	background: #4E5994;
+}
+
+a{
+	text-decoration: none;
+	
+}
+
+.topic .auther
+{
+	margin-left: 10px;
+	
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	/* identical to box height */
+
+
+	color: #797979;
+}

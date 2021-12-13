@@ -29,13 +29,24 @@
     <content>
     	<?php 
 
-	    	for($i=0; $i < 20; $i++)
-	    	{
-	    		echo "<div class='topic'>";
-	    		echo "</div>";
-	    	}
+	    	// for($i=0; $i < 20; $i++)
+	    	// {
+	    	// 	echo "<div class='topic'>";
+	    	// 	echo "<div>"
+	    	// 	echo "</div>";
+	    	// }
 
     	?>
+
+    	<div class='topic'>
+    		<div class="topic-title">
+    			<div class="text">Помогите решить пример пазязя</div>
+    			<div class="marks mark-warning unselectable">Ошибка</div>
+    		</div>
+    		<div class="auther">
+    			xoheveras    ответов 2
+    		</div>
+    	</div>
     </content>
     <style type="text/css"> 
         <?php echo file_get_contents("vendor/css/Main.css"); ?>
