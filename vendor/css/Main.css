@@ -122,6 +122,8 @@ header
 	box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 
+	margin-left: 26.5%;
+
 	margin-top: 10px;
 }
 
@@ -138,13 +140,13 @@ header
 	color: #000000;
 
 	margin-top: 15px;
-	margin-left: 10px;
+	margin-left: 15px;
 	margin-bottom: 5px;
 }
 
 .topic-title .marks{
 	margin-top: 15px;
-	margin-left: 10px;
+	margin-left: 15px;
 	border-radius: 5px;
 	margin-bottom: 5px;
 	width: auto;
@@ -191,7 +193,7 @@ a{
 
 .topic .auther
 {
-	margin-left: 10px;
+	margin-left: 15px;
 	
 
 	font-family: Montserrat;
@@ -203,4 +205,46 @@ a{
 
 
 	color: #797979;
+}
+
+.forum-section
+{
+	margin-left: 27%;
+	margin-right: 27%;
+}
+
+.forum-section .label
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	/* identical to box height */
+	color: #797979;
+
+	margin-bottom: 5px;
+}
+
+.section
+{
+	display: flex;
+	margin-top: 10px;
+}
+
+.section .sub-text
+{
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 16px;
+
+	color: #797979;
+}
+
+.section-info
+{
+	width: 50%;
 }

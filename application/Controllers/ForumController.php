@@ -12,7 +12,7 @@
 		public function mainAction()
 		{
 			$this->requst = [
-				"topics" => $this->model->datebase->getAlldate("SELECT * FROM fthems"),
+				"topics" => array_reverse($this->model->datebase->getAlldate("SELECT * FROM fthems")),
 			];
 			$this->view->LoadDesign($this->requst);
 		}

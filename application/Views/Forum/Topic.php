@@ -31,7 +31,7 @@
 			echo "<img src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
 
 			echo "<div> Автор: ";
-			echo $value["autherid"];
+			echo getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"];
 			echo "</div>";
 
 			echo "<div> Текст (перейти на html разметку): ";

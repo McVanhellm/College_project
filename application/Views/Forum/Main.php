@@ -26,22 +26,40 @@
             </div>
         </div>
     </header>
-    <content>
-		<?php 
-			foreach($args["topics"] as $value)
-			{
-				echo "<a href='forum/topic?id=".$value["id"]."'>";
-				echo "<div class='topic'>";
-				echo "<div class='topic-title'>";
-				echo "<div class='text'>".$value["title"]."</div>";
-				echo getMark($value["mark"]);
-				echo "</div>";
-				echo "<div class='auther'>".$value["autherid"]."</div>";
-				echo "</div>";
-				echo "</a>";
-			}
-		?>
-    </content>
+
+    <div class="forum-section">
+        <div class="label">Физика</div>
+        <hr/>
+        <div class="section">
+            <div class="section-info">
+                <div class="label">Помощь начинающим</div>
+                <div class="sub-text">раздел где вы можете попросить помощь у<br>более опытных юзеров</div>
+            </div>
+            <div class="last-section-topic">
+
+                <?php 
+
+                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=0 order by id desc LIMIT 1");
+                    $date = getDateTime($lasttopic['datecreate']);
+
+                    echo "<div class='label'>".$lasttopic['title']."</div>";
+                    echo "<div class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." ".$date."</div>";
+                ?>
+            </div>
+        </div>
+
+    </div>
+
+<!-- 	<?php 
+		foreach($args["topics"] as $value)
+		{
+			echo "<a href='forum/topic?id=".$value["id"]."'>";
+			echo "<div class='topic'> <div class='topic-title'>";
+			echo "<div class='text'>".$value["title"]."</div>";
+			echo getMark($value["mark"]);
+			echo "</div> <div class='auther'>".getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"]."</div></div></a>";
+		}
+	?> -->
     <style type="text/css"> 
         <?php echo file_get_contents("vendor/css/Main.css"); ?>
     </style>
