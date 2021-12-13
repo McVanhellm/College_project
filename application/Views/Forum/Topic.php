@@ -23,6 +23,25 @@
 
 		?>
 		<hr/>
+		<?php
+
+
+		foreach($args["comment"] as $value)
+		{
+			echo "<img src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
+
+			echo "<div> Автор: ";
+			echo $value["autherid"];
+			echo "</div>";
+
+			echo "<div> Текст (перейти на html разметку): ";
+			echo $value["content"];
+			echo "</div>";
+
+			echo "<hr/>";
+		}
+
+		?>
 	</body>
 
 	<style type="text/css"> 
