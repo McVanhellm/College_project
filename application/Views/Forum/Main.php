@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo-box unselectable">
-            <a href=""><img src="vendor/image/logo.png"></a>
+            <a href="index"><img src="vendor/image/logo.png"></a>
         </div>
         <div class="level-information">
             <div class="text">
