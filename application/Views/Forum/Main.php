@@ -218,13 +218,11 @@
         </div></a>
     </div>
     <div id="forum-topics">
-        <div class="control">
-            <a class="backbtn" href="forum"> Назад</a>
-            <div class="createtopic"><p align="right">Создать тему</p></div>
-        </div>
         <?php 
             if(isset($_GET['section']))
             {
+                echo "<div class='control'> <a class='backbtn' href='forum'> Назад</a> <div class='createtopic'><p align='right'>Создать тему</p></div></div>";
+
         		foreach($args["topics"] as $value)
         		{
                     if($value["section"] == $_GET['section'])
@@ -245,11 +243,48 @@
     <script type="text/javascript">
 
         isSelection = <?php if(isset($_GET['section'])) echo true; else return false; ?>;
+        selectionID = <?php echo $_GET['section']; ?>;
 
         if(isSelection)
         {
             document.getElementById("forum-section-id").hidden = true;
             document.getElementById("forum-topics").hidden = false;
+
+            switch(selectionID)
+            {
+                case 0: 
+                    document.getElementById("them-title").innerHTML = "Помощь начинающим";
+                    document.getElementById("them-level").innerHTML = "раздел где вы можете попросить помощь у<br>более опытных юзеров";
+                break;
+                case 1: 
+                    document.getElementById("them-title").innerHTML = "Статьи связанные с физикой";
+                    document.getElementById("them-level").innerHTML = "Тут находяться все статьи которые посвящены физике.";
+                break;
+                case 2: 
+                    document.getElementById("them-title").innerHTML = "Помощь начинающим";
+                    document.getElementById("them-level").innerHTML = "раздел где вы можете попросить помощь у<br>более опытных юзеров.";
+                break;
+                case 3: 
+                    document.getElementById("them-title").innerHTML = ".NET";
+                    document.getElementById("them-level").innerHTML = "Данный раздел посвящен разработке на .Net<br>winform, wpf, .core, xamarin и другое";
+                break;
+                case 4: 
+                    document.getElementById("them-title").innerHTML = "Веб-Разработка";
+                    document.getElementById("them-level").innerHTML = "Данный раздел посвящен веб-раработке с<br>поиощью js,html,css и других";
+                break;
+                case 5: 
+                    document.getElementById("them-title").innerHTML = "Java";
+                    document.getElementById("them-level").innerHTML = "Данный раздел посвящен разработке на java.";
+                break;
+                case 6: 
+                    document.getElementById("them-title").innerHTML = "Python";
+                    document.getElementById("them-level").innerHTML = "ТРаздел посвященный разработке на python<br>любые вопросы по python сюда";
+                break;
+                case 7: 
+                    document.getElementById("them-title").innerHTML = "Предложения по улучшению";
+                    document.getElementById("them-level").innerHTML = "Тут находяться все статьи которые посвящены физике.";
+                break;
+            }
         }
         else
         {
