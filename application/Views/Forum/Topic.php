@@ -10,7 +10,7 @@
 <body>
     <header class="header_">
         <div class="logo-box unselectable">
-            <a href="index"><img src="../vendor/image/logo.png"></a>
+            <a href="../forum"><img src="../vendor/image/logo.png"></a>
         </div>
         <div class="level-information"> </div>
         <div class="account-icon">
@@ -32,7 +32,7 @@
 		echo "<div class='them-content_'> <div class='account-info_'>";
 		echo "<img class='account-img_' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
 		echo "<div class='account-name_' align='center'>".$args["autherName"]["login"]."</div>";
-		echo "<div align='center' class='account-rang_ rang-huan_'>Дон-Хуан</div></div>";
+		echo getRang($args["autherLvl"]["alevel"]);
 		echo "<div class='them-content-text_'>".$args["topicInfo"]["contentHTML"]."</div></div>";
 
 		?>
@@ -45,7 +45,7 @@
 			echo "<div class='them-content_'> <div class='account-info_'>";
 			echo "<img class='account-img_' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
 			echo "<div class='account-name_' align='center'>".getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"]."</div>";
-			echo "<div align='center' class='account-rang_ rang-huan_'>Дон-Хуан</div></div>";
+			echo getRang(getFData("SELECT alevel FROM users WHERE id=".$value["autherid"])["alevel"]);
 			echo "<div class='them-content-text_'>".$value["content"]."</div></div>";
 			echo "<hr/>";
 		}

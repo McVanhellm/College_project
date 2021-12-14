@@ -58,4 +58,35 @@
 		if(strpos($string, 'Информация портала') !== false) echo "<div class='marks mark-info unselectable'>Информация портала</div>";
 	}
 
+	function getRang($level)
+	{
+
+		switch ($level) 
+		{
+			case 1:
+				echo "<div align='center' class='account-rang_ rang-ticher_'>Учитель</div></div>";
+				break;
+
+			case 2:
+				echo "<div align='center' class='account-rang_ rang-moderator_'>Модератор</div></div>";
+				break;
+
+			case 3:
+				echo "<div align='center' class='account-rang_ rang-creater_'>Разработчик</div></div>";
+				break;
+
+			case 4:
+				echo "<div align='center' class='account-rang_ rang-spirit_'>Призрак</div></div>";
+				break;
+
+			case 5:
+				echo "<div align='center' class='account-rang_ rang-huan_'>Дон-Хуан</div></div>";
+				break;
+			
+			default:
+				echo "<div align='center' class='account-rang_ rang-user_'>Человек</div></div>";
+				break;
+		}
+	}
+
 ?>

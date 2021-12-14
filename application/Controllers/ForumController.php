@@ -31,6 +31,7 @@
 					"topicInfo" => $topicInfo,
 					"autherName" => $this->model->datebase->getdate("SELECT login FROM users WHERE id=".$topicInfo["autherid"]),
 					"autherImg" => $this->model->datebase->getdate("SELECT avatar FROM users WHERE id=".$topicInfo["autherid"]),
+					"autherLvl" => $this->model->datebase->getdate("SELECT alevel FROM users WHERE id=".$topicInfo["autherid"]),
 					"comment" => $this->model->datebase->getAlldate("SELECT * FROM fcomment WHERE idthems=".$_GET['id']),
 
 				];

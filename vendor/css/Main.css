@@ -386,12 +386,12 @@ a{
 
 .rang-creater_
 {
-	background: #FF7474;
+	background: linear-gradient(90deg, #881C39 23.96%, #6F162E 100%);
 }
 
 .rang-moderator_
 {
-	background: #FFCB9B;
+	background: linear-gradient(90deg, #951CE2 23.96%, #8E177B 100%);
 }
 
 .rang-user_
@@ -402,4 +402,26 @@ a{
 .rang-huan_
 {
 	background: linear-gradient(90deg, #383838 23.96%, #A35BAF 100%);
+}
+
+.rang-spirit_
+{
+	background: linear-gradient(90deg, #0F212B 23.96%, #6F162E 100%);
+}
+
+.rang-ticher_
+{
+	background: linear-gradient(115.27deg, #1D6DDC 36.61%, #951CE2 79.91%);
+}
+
+
+code
+{
+	width: auto;
+	height: auto;
+
+	padding: 5px;
+
+	background: #F4F4F4;
+	border-radius: 5px;
 }
