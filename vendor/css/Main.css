@@ -144,7 +144,7 @@ header
 	margin-bottom: 5px;
 }
 
-.topic-title .marks{
+.marks{
 	margin-top: 15px;
 	margin-left: 15px;
 	border-radius: 5px;
@@ -291,4 +291,115 @@ a{
 
 	width: 350px;
 	height: 75px;
+}
+
+.content_{
+		margin-left: 26.5%;
+		margin-right: 26.5%;
+}
+
+.label_
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 42px;
+	color: #797979;
+
+	margin-bottom: 30px;
+}
+
+.labelbox_
+{
+	display: flex;
+}
+
+.header_{
+	display: flex;
+	height: 80px;
+
+	margin-bottom: 0px;
+}
+
+.them-content_
+{
+	display: flex;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+
+.account-info_
+{
+	margin-right: 15px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 13px;
+
+	color: #848484;
+}
+
+.account-img_
+{
+	border-radius:50%;
+
+	width: 100px;
+	height: 100px;
+}
+
+.account-name_
+{
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.them-content-text_
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 13px;
+
+	color: #797979;
+}
+.account-rang_
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 11px;
+	color: #FFFFFF;
+
+	padding: 5px;
+	margin-left: 2px;
+	margin-bottom: 10px;
+
+	width: auto;
+	height: auto;
+}
+
+.rang-creater_
+{
+	background: #FF7474;
+}
+
+.rang-moderator_
+{
+	background: #FFCB9B;
+}
+
+.rang-user_
+{
+	background: #C4C4C4;
+}
+
+.rang-huan_
+{
+	background: linear-gradient(90deg, #383838 23.96%, #A35BAF 100%);
 }

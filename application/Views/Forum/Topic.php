@@ -8,34 +8,32 @@
     <title><?php echo $args["topicInfo"]["title"]; ?></title>
 </head>
 <body>
-    <header>
+    <header class="header_">
         <div class="logo-box unselectable">
             <a href="index"><img src="../vendor/image/logo.png"></a>
         </div>
         <div class="level-information"> </div>
         <div class="account-icon">
-            <div id="userArea">
-              <div id="userInfo" > <?php echo $_SESSION['login']; echo '<img src="../vendor/avatar/'.$_SESSION["avatar"].'">'?> </div> 
-            </div>
+            <?php 
+                if(isset($_SESSION["isAuth"]))
+                    echo "<div id='userArea'><div id='userInfo'>".$_SESSION['login']."<img src='../vendor/avatar/".$_SESSION["avatar"]."'></div></div>";
+            ?>
         </div>
     </header>
 
-    <div class="content">
+    <div class="content_">
     	<?php
 
-		echo "<div>";
-		echo "<h2>".$args["topicInfo"]["title"]."</h2>";
+		echo "<div class='labelbox_'>";
+		echo "<div class='label_'>".$args["topicInfo"]["title"]."</div>";
+		echo getMark(getFData("SELECT mark FROM fthems WHERE id=".$_GET['id'])["mark"]);
 		echo "</div>";
 
-		echo "<div>";
-		echo $args["topicInfo"]["contentHTML"];
-		echo "</div>";
-
-		echo "<div> Автор: ";
-		echo $args["autherName"]["login"];
-		echo "</div>";
-
-		echo "<img src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>"
+		echo "<div class='them-content_'> <div class='account-info_'>";
+		echo "<img class='account-img_' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
+		echo "<div class='account-name_' align='center'>".$args["autherName"]["login"]."</div>";
+		echo "<div align='center' class='account-rang_ rang-huan_'>Дон-Хуан</div></div>";
+		echo "<div class='them-content-text_'>".$args["topicInfo"]["contentHTML"]."</div></div>";
 
 		?>
 		<hr/>
@@ -44,16 +42,11 @@
 
 		foreach($args["comment"] as $value)
 		{
-			echo "<img src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
-
-			echo "<div> Автор: ";
-			echo getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"];
-			echo "</div>";
-
-			echo "<div> Текст (перейти на html разметку): ";
-			echo $value["content"];
-			echo "</div>";
-
+			echo "<div class='them-content_'> <div class='account-info_'>";
+			echo "<img class='account-img_' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
+			echo "<div class='account-name_' align='center'>".getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"]."</div>";
+			echo "<div align='center' class='account-rang_ rang-huan_'>Дон-Хуан</div></div>";
+			echo "<div class='them-content-text_'>".$value["content"]."</div></div>";
 			echo "<hr/>";
 		}
 

@@ -20,7 +20,7 @@
 
 				/* Create account */
 				$password = md5($password);
-				$this->datebase->updatedate("INSERT INTO users (id,login,password,email,avatar) VALUES(NULL,'$login','$password','$email','noimg.png')");
+				$this->datebase->updatedate("INSERT INTO users (id,login,password,email,avatar,alevel) VALUES(NULL,'$login','$password','$email','noimg.png',0)");
 
 				/* Get user id */
 				$userid = $this->datebase->getdate("SELECT id FROM users WHERE login='".$login."'")['id'];
@@ -42,7 +42,7 @@
 				if($requst['password'] == md5($password))
 				{
 					if(session::isAuth("isAuth") != true)
-						session::authorization(true,$requst["id"],$login,$requst["avatar"]);
+						session::authorization(true,$requst["id"],$login,$requst["avatar"],$require["alevel"]);
 					return header("Location: ../account/home");
 				}
 				else return "Неверный пароль";

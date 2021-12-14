@@ -21,9 +21,10 @@
             </div>
         </div>
         <div class="account-icon">
-            <div id="userArea">
-              <div id="userInfo" > <?php echo $_SESSION['login']; echo '<img src="vendor/avatar/'.$_SESSION["avatar"].'">'?> </div> 
-            </div>
+            <?php 
+                if(isset($_SESSION["isAuth"]))
+                    echo "<div id='userArea'><div id='userInfo'>".$_SESSION['login']."<img src='vendor/avatar/".$_SESSION["avatar"]."'></div></div>";
+            ?>
         </div>
     </header>
 
