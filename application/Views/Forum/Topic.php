@@ -24,31 +24,50 @@
     <div class="content_">
     	<?php
 
-		echo "<div class='labelbox_'>";
-		echo "<div class='label_'>".$args["topicInfo"]["title"]."</div>";
-		echo getMark(getFData("SELECT mark FROM fthems WHERE id=".$_GET['id'])["mark"]);
-		echo "</div>";
+			echo "<div class='labelbox_'>";
+			echo "<div class='label_'>".$args["topicInfo"]["title"]."</div>";
+			echo getMark(getFData("SELECT mark FROM fthems WHERE id=".$_GET['id'])["mark"]);
+			echo "</div>";
 
-		echo "<div class='them-content_'> <div class='account-info_'>";
-		echo "<img class='account-img_' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
-		echo "<div class='account-name_' align='center'>".$args["autherName"]["login"]."</div>";
-		echo getRang($args["autherLvl"]["alevel"]);
-		echo "<div class='them-content-text_'>".$args["topicInfo"]["contentHTML"]."</div></div>";
+			echo "<div class='them-content_'> <div class='account-info_'>";
+			echo "<img class='account-img_' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
+			echo "<div class='account-name_' align='center'>".$args["autherName"]["login"]."</div>";
+			echo getRang($args["autherLvl"]["alevel"]);
+			echo "<div class='them-content-text_'>".$args["topicInfo"]["contentHTML"]."</div></div>";
 
+			if(isset($_SESSION["isAuth"]))
+			{
+				if(getFData("SELECT alevel FROM users WHERE id=".$_SESSION['id'])["alevel"] > 1 || $_SESSION["login"] == $args["autherName"]["login"])
+				{
+					echo "<div align='right' class='them-edit'>
+						Удалить Редактировать
+					</div>";
+				}
+			}
 		?>
 		<hr/>
 		<?php
 
 
-		foreach($args["comment"] as $value)
-		{
-			echo "<div class='them-content_'> <div class='account-info_'>";
-			echo "<img class='account-img_' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
-			echo "<div class='account-name_' align='center'>".getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"]."</div>";
-			echo getRang(getFData("SELECT alevel FROM users WHERE id=".$value["autherid"])["alevel"]);
-			echo "<div class='them-content-text_'>".$value["content"]."</div></div>";
-			echo "<hr/>";
-		}
+			foreach($args["comment"] as $value)
+			{
+				echo "<div class='them-content_'> <div class='account-info_'>";
+				echo "<img class='account-img_' src='../vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$value["autherid"])["avatar"]."'>";
+				echo "<div class='account-name_' align='center'>".getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"]."</div>";
+				echo getRang(getFData("SELECT alevel FROM users WHERE id=".$value["autherid"])["alevel"]);
+				echo "<div class='them-content-text_'>".$value["content"]."</div></div>";
+
+				if(isset($_SESSION["isAuth"]))
+				{
+					if(getFData("SELECT alevel FROM users WHERE id=".$_SESSION['id'])["alevel"] > 1 || $_SESSION["login"] == getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"])
+					{
+						echo "<div align='right' class='them-edit'>
+							Удалить Редактировать
+						</div>";
+					}
+				}
+				echo "<hr/>";
+			}
 
 		?>
     </div>

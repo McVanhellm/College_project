@@ -425,3 +425,16 @@ code
 	background: #F4F4F4;
 	border-radius: 5px;
 }
+
+.them-edit
+{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 11px;
+	color: #797979;
+
+	margin-bottom: 5px;
+
+}
