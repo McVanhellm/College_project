@@ -7,7 +7,7 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "editor.fontSize": 35,
+    "editor.fontSize": 0,
     "editor.tabSize": 1,
     "terminal.integrated.allowChords": false,
     "editor.codeLens": false,
