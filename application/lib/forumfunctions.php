@@ -64,27 +64,27 @@
 		switch ($level) 
 		{
 			case 1:
-				echo "<div align='center' class='account-rang_ rang-ticher_'>Учитель</div></div>";
+				echo "<div align='center' class='account-rang_ rang-ticher_ unselectable'>Учитель</div></div>";
 				break;
 
 			case 2:
-				echo "<div align='center' class='account-rang_ rang-moderator_'>Модератор</div></div>";
+				echo "<div align='center' class='account-rang_ rang-moderator_ unselectable'>Модератор</div></div>";
 				break;
 
 			case 3:
-				echo "<div align='center' class='account-rang_ rang-creater_'>Разработчик</div></div>";
+				echo "<div align='center' class='account-rang_ rang-creater_ unselectable'>Разработчик</div></div>";
 				break;
 
 			case 4:
-				echo "<div align='center' class='account-rang_ rang-spirit_'>Призрак</div></div>";
+				echo "<div align='center' class='account-rang_ rang-spirit_ unselectable'>Призрак</div></div>";
 				break;
 
 			case 5:
-				echo "<div align='center' class='account-rang_ rang-huan_'>Дон-Хуан</div></div>";
+				echo "<div align='center' class='account-rang_ rang-huan_ unselectable'>Дон-Хуан</div></div>";
 				break;
 			
 			default:
-				echo "<div align='center' class='account-rang_ rang-user_'>Человек</div></div>";
+				echo "<div align='center' class='account-rang_ rang-user_ unselectable'>Человек</div></div>";
 				break;
 		}
 	}

@@ -30,7 +30,7 @@
 			echo "</div>";
 
 			echo "<div class='them-content_'> <div class='account-info_'>";
-			echo "<img class='account-img_' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
+			echo "<img class='account-img_ unselectable' src='../vendor/avatar/".$args["autherImg"]["avatar"]."'>";
 			echo "<div class='account-name_' align='center'>".$args["autherName"]["login"]."</div>";
 			echo getRang($args["autherLvl"]["alevel"]);
 			echo "<div class='them-content-text_'>".$args["topicInfo"]["contentHTML"]."</div></div>";
@@ -52,7 +52,7 @@
 			foreach($args["comment"] as $value)
 			{
 				echo "<div class='them-content_'> <div class='account-info_'>";
-				echo "<img class='account-img_' src='../vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$value["autherid"])["avatar"]."'>";
+				echo "<img class='account-img_ unselectable' src='../vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$value["autherid"])["avatar"]."'>";
 				echo "<div class='account-name_' align='center'>".getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"]."</div>";
 				echo getRang(getFData("SELECT alevel FROM users WHERE id=".$value["autherid"])["alevel"]);
 				echo "<div class='them-content-text_'>".$value["content"]."</div></div>";
