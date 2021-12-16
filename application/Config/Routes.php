@@ -78,6 +78,11 @@
 			'controller' => 'Account',
 			'action' => 'Home',
 		],
+
+		'forum/test' => [
+			'controller' => 'TestE',
+			'action' => 'TestE',
+		],
 	];
 
 ?>

@@ -34,10 +34,10 @@
 	          <div class="imgs">
 	              <div class="grid">
 	                  <div class="img img-1">
-	                      <img src="vendor/image/y4.gif"/>
+	                      <img src="vendor/image/AtomLogo.png"/>
 	                  </div>
 	                  <div class="img img-2">
-	                      <img src="vendor/image/y4.gif"/>
+	                      <img src="vendor/image/Mec.png"/>
 	                  </div>
 	                  <div class="img img-3">
 	                      <img src="vendor/image/y4.gif"/>
