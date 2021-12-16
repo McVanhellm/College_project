@@ -1,16 +1,3 @@
-<script>
-
-function startHide(countAnswer)
-{
-	 for (let index = 1; index < countAnswer; index++) 
-		{
-				alert("task-form-"+index);
-				document.getElementById("task-form"+index).hidden = true;
-		}
-}
-
-</script>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -68,11 +55,12 @@ function startHide(countAnswer)
 				}
 				echo "</form>";
 			}
-			echo "<script>startHide(".count($taskValue->Answers).");</script>";
 	}
 	?>
 	</body>
 	<style type="text/css"> 
 		<?php echo file_get_contents("vendor/css/TestE.css"); ?>
 	</style>
+	<script>
+	</script>
 </html>
