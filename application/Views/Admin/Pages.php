@@ -15,7 +15,7 @@
 				<ul>
 					<li><a href="../admin/panel"><img src="https://raw.githubusercontent.com/xoheveras/CMS/main/cms_vendor/image/stats-chart.png"></a></li>
 					<li><a href="../admin/pages"><img src="https://raw.githubusercontent.com/xoheveras/CMS/main/cms_vendor/image/document-sharp.png"></a></li>
-					<li><a href="../admin/setting"><img src="https://raw.githubusercontent.com/xoheveras/CMS/main/cms_vendor/image/hammer-sharp.png"></a></li>
+					<li><a href="../admin/ctest"><img src="https://raw.githubusercontent.com/xoheveras/CMS/main/cms_vendor/image/hammer-sharp.png"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -51,7 +51,7 @@
 						if(isset($_GET['file']))
 							echo openfile($_GET['file']);
 					 ?> </textarea>
-					<input class="save-btn" type="submit" name="" value="Сохранить">
+					<!-- <input class="save-btn" type="submit" name="" value="Сохранить"> -->
 				</form>
 			</div>
 		</div>

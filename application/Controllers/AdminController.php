@@ -66,6 +66,14 @@
 			
 			$this->view->LoadDesign();
 		}
+
+		public function CreateTestAction()
+		{
+			if(session::isAuth('isAdminAuth') == false)
+				return header("Location: login");
+			
+			$this->view->LoadDesign();
+		}
 	}
 
 ?>

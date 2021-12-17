@@ -21,14 +21,9 @@
 			'action' => 'Pages',
 		],
 
-		'admin/setting' => [
+		'admin/ctest' => [
 			'controller' => 'Admin',
-			'action' => 'setting',
-		],
-
-		'admin/plugins' => [
-			'controller' => 'Admin',
-			'action' => 'plugins',
+			'action' => 'CreateTest',
 		],
 		
 		/*
