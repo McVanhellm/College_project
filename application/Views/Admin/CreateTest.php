@@ -25,8 +25,6 @@
 				<input id="tests-count" placeholder="Количество тестов"></input>
 				<div onclick="CreateTasksList();" id="btn-lvl1-next">Далее</div>
 				<div id="tests-box-list">
-					<div id="test-box-list-spoiler"></div>
-					<div id="test-box-list-spoiler"></div>
 				</div>
 			</div>
 		</div>
@@ -37,6 +35,42 @@
 				else
 					echo getRaw("css","pagesLight.css");
 			?>
+
+			#test-box-list-spoiler-content
+			{
+				margin-top: 29px;
+				background-color: #1C1B1F;
+				border-radius: 0px 0px 5px 5px;
+				padding: 10px;
+
+				font-family: Montserrat;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 15px;
+				color: #848484;
+
+				width: 430px;
+
+				height: 30px;
+
+				border: none;
+				resize: none;
+
+			}
+
+			#test-box-list-spoiler-title
+			{
+				width: 234px;
+				height: 20px;
+				font-family: Montserrat;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 15px;
+				line-height: 50px;
+				margin-left: 15px;
+				color: #848484;
+				width: 50%;
+			}
 
 			.create-tests-box
 			{
@@ -52,6 +86,8 @@
 
 				margin-left: 13px;
 				margin-top: 10px;
+
+				display: flex;
 			}
 
 			#tests-box-list
@@ -62,7 +98,8 @@
 				padding-top: 5px;
 
 				width: 475px;
-				height: 725px;
+				min-height: 725px;
+				height: auto;
 				background: #222126;
 				box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
 				border-radius: 5px;
@@ -84,7 +121,7 @@
 			      margin-left: 20px;
 			}
 
-			#create-list-test input
+			#create-list-test #tests-count
 			{
 				font-family: Montserrat;
 				font-style: normal;
@@ -109,7 +146,7 @@
 				border: none;
 			}
 
-			#create-list-test input:focus
+			#create-list-test #tests-count:focus
 			{
 				outline: none;
 			}
@@ -179,6 +216,12 @@
 				testPlaceholder = true;
 				testsBoxList.hidden = false;
 				nextBtnl1.hidden = true;
+
+				for (var i = 1; i <= inputCountTestValue; i++)
+				{
+					testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест 1</summary><textarea id="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
+				}
+
 				fadeIn(document.getElementById('tests-box-list'), 100);
 			}
 
