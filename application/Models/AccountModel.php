@@ -42,7 +42,7 @@
 				if($requst['password'] == md5($password))
 				{
 					if(session::isAuth("isAuth") != true)
-						session::authorization(true,$requst["id"],$login,$requst["avatar"],$require["alevel"]);
+						session::authorization(true,$requst["id"],$login,$requst["avatar"],getFData("SELECT alevel FROM users WHERE id=".$requst["id"])["alevel"]);
 					return header("Location: ../account/home");
 				}
 				else return "Неверный пароль";

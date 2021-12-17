@@ -37,20 +37,8 @@
                 <div class="label">Помощь начинающим</div>
                 <div class="sub-text">раздел где вы можете попросить помощь у<br>более опытных юзеров</div>
             </div>
-            <div class="last-section-topic">
-
-                <?php 
-
-                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=0 order by id desc LIMIT 1");
-                    $date = getDateTime($lasttopic['datecreate']);
-
-                    if($lasttopic != null)
-                    {
-                        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".$lasttopic['title']."</div>";
-                        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
-                        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
-                    }
-                ?>
+            <div class="last-section-topic"> 
+                <?php getLastTopic(0); ?>
             </div>
         </div></a>
         <a href="forum?section=1">
@@ -60,19 +48,7 @@
                 <div class="sub-text">Тут находяться все статьи которые посвящены<br>физике.</div>
             </div>
             <div class="last-section-topic">
-
-                <?php 
-
-                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=1 order by id desc LIMIT 1");
-                    if($lasttopic != null)
-                    {
-                        $date = getDateTime($lasttopic['datecreate']);
-
-                        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".$lasttopic['title']."</div>";
-                        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
-                        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
-                    }
-                ?>
+                <?php getLastTopic(1); ?>
             </div>
         </div></a>
         <!-- IT -->
@@ -85,20 +61,7 @@
                 <div class="sub-text">раздел где вы можете попросить помощь у<br>более опытных юзеров</div>
             </div>
             <div class="last-section-topic">
-
-                <?php 
-
-                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=2 order by id desc LIMIT 1");
-    
-                    if($lasttopic != null)
-                    {
-                        $date = getDateTime($lasttopic['datecreate']);
-
-                        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".$lasttopic['title']."</div>";
-                        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
-                        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
-                    }
-                ?>
+                <?php getLastTopic(2); ?>
             </div>
         </div></a>
         <a href="forum?section=3">
@@ -108,19 +71,7 @@
                 <div class="sub-text">Данный раздел посвящен разработке на .Net<br>winform, wpf, .core, xamarin и другое</div>
             </div>
             <div class="last-section-topic">
-
-                <?php 
-
-                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=3 order by id desc LIMIT 1");
-                    if($lasttopic != null)
-                    {
-                        $date = getDateTime($lasttopic['datecreate']);
-
-                        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".$lasttopic['title']."</div>";
-                        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
-                        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
-                    }
-                ?>
+                <?php getLastTopic(3); ?>
             </div>
         </div></a>
         <a href="forum?section=4">
@@ -130,20 +81,7 @@
                 <div class="sub-text">Данный раздел посвящен веб-раработке  с<br>поиощью js,html,css и других</div>
             </div>
             <div class="last-section-topic">
-
-                <?php 
-
-                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=5 order by id desc LIMIT 1");
-
-                    if($lasttopic != null)
-                    {
-                        $date = getDateTime($lasttopic['datecreate']);
-
-                        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".$lasttopic['title']."</div>";
-                        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
-                        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
-                    }
-                ?>
+                <?php getLastTopic(4); ?>
             </div>
         </div></a>
         <a href="forum?section=5">
@@ -153,19 +91,7 @@
                 <div class="sub-text">Данный раздел посвящен разработке на java</div>
             </div>
             <div class="last-section-topic">
-
-                <?php 
-
-                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=6 order by id desc LIMIT 1");
-                    if($lasttopic != null)
-                    {
-                        $date = getDateTime($lasttopic['datecreate']);
-
-                        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".$lasttopic['title']."</div>";
-                        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
-                        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
-                    }
-                ?>
+                <?php getLastTopic(5); ?>
             </div>
         </div></a>
         <a href="forum?section=6">
@@ -175,20 +101,7 @@
                 <div class="sub-text">Раздел посвященный разработке на python<br>любые вопросы по python сюда</div>
             </div>
             <div class="last-section-topic">
-
-                <?php 
-
-                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=7 order by id desc LIMIT 1");
-
-                    if($lasttopic != null)
-                    {
-                        $date = getDateTime($lasttopic['datecreate']);
-
-                        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".$lasttopic['title']."</div>";
-                        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
-                        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
-                    }
-                ?>
+                <?php getLastTopic(6); ?>
             </div>
         </div></a>
         <!-- Форум -->
@@ -201,20 +114,7 @@
                 <div class="sub-text">раздел где вы можете попросить помощь у<br>более опытных юзеров</div>
             </div>
             <div class="last-section-topic">
-
-                <?php 
-
-                    $lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=8 order by id desc LIMIT 1");
-
-                    if($lasttopic != null)
-                    {
-                        $date = getDateTime($lasttopic['datecreate']);
-
-                        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".$lasttopic['title']."</div>";
-                        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
-                        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
-                    }
-                ?>
+                <?php getLastTopic(7); ?>
             </div>
         </div></a>
     </div>

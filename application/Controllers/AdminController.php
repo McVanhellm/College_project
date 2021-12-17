@@ -18,6 +18,10 @@
 		# window in the admin panel, all authorization actions take place here
 		public function AdminLoginAction()
 		{
+			if(!isset($_SESSION['alevel'])) return header("Location: ../account/login");
+			else if($_SESSION['alevel'] < 3) return header("Location: ../account/login");
+
+
 			# Check if the user is authorized as an administrator, otherwise a redirect will occur
 			if(session::isAuth('isAdminAuth') == true)
 				return header("Location: panel");

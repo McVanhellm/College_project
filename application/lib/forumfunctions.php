@@ -58,6 +58,20 @@
 		if(strpos($string, 'Информация портала') !== false) echo "<div class='marks mark-info unselectable'>Информация портала</div>";
 	}
 
+	function getLastTopic($section)
+	{
+		$lasttopic = getFData("SELECT id,title,autherid,datecreate FROM fthems WHERE section=".$section." order by id desc LIMIT 1");
+
+	    if($lasttopic != null)
+	    {
+	        $date = getDateTime($lasttopic['datecreate']);
+	        
+	        echo "<div style='display:flex;'><a href='forum/topic?id=".$lasttopic['id']."'><div class='label'>".substr($lasttopic["title"],0,31)."..."."</div>";
+	        echo "<div style='display:flex;' class='sub-text'>".getFData("SELECT login FROM users WHERE id=".$lasttopic['autherid'])["login"]." <p align='right' style='margin-left:auto;'>".$date."</p></div> </a>";
+	        echo "<img style='border-radius: 100px; width:40px; height:40px; margin-left:10px; margin-top:2px' src='vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$lasttopic['autherid'])["avatar"]."'> </div>";
+	    }
+	}
+
 	function getRang($level)
 	{
 

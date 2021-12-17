@@ -37,7 +37,7 @@
 
 			if(isset($_SESSION["isAuth"]))
 			{
-				if(getFData("SELECT alevel FROM users WHERE id=".$_SESSION['id'])["alevel"] > 1 || $_SESSION["login"] == $args["autherName"]["login"])
+				if($_SESSION['alevel'] > 1 || $_SESSION["login"] == $args["autherName"]["login"])
 				{
 					echo "<div align='right' class='them-edit'>
 						Удалить Редактировать
@@ -54,7 +54,7 @@
 				echo "<div class='them-content_'> <div class='account-info_'>";
 				echo "<img class='account-img_ unselectable' src='../vendor/avatar/".getFData("SELECT avatar FROM users WHERE id=".$value["autherid"])["avatar"]."'>";
 				echo "<div class='account-name_' align='center'>".getFData("SELECT login FROM users WHERE id=".$value["autherid"])["login"]."</div>";
-				echo getRang(getFData("SELECT alevel FROM users WHERE id=".$value["autherid"])["alevel"]);
+				echo getRang($_SESSION['alevel'] > 1);
 				echo "<div class='them-content-text_'>".$value["content"]."</div></div>";
 
 				if(isset($_SESSION["isAuth"]))
