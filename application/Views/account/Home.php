@@ -20,7 +20,7 @@
                 </div>
                 <div class="free-spaces"></div>
                 <div class="quotes">
-                    <div class="text">“Каждый человек может быть <br> умным человеком, ауф” P.s Тесла</div>
+                    <div class="text">“До сих пор на бензине ездите,<br> обезьяны?” P.s Тесла</div>
                     <div class="icon unselectable">
                         <img src="../vendor/image/tesla.png">
                     </div>
