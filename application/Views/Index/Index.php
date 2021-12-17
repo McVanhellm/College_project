@@ -11,7 +11,6 @@
 
 	</head>
 	<style>
-		<?php echo file_get_contents("vendor/css/CSSsector.css"); ?>
 		<?php echo file_get_contents("vendor/css/Style.css"); ?>
 	</style>
 	<body>
