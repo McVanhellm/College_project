@@ -11,6 +11,7 @@
     <header>
         <div class="logo-box unselectable">
             <a href=""><img src="../vendor/image/logo.png"></a>
+        
         </div>
         <div class="level-information">
             <div class="text">
@@ -20,7 +21,7 @@
                 </div>
                 <div class="free-spaces"></div>
                 <div class="quotes">
-                    <div class="text">“Каждый человек может быть <br> умным человеком, ауф” P.s Тесла</div>
+                    <div class="text">“До сих пор на бензине ездите,<br> обезьяны?” P.s Тесла</div>
                     <div class="icon unselectable">
                         <img src="../vendor/image/tesla.png">
                     </div>

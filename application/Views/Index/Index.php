@@ -17,107 +17,6 @@
 	<body>
   		<div class="intro" id="intro">
     	<!--Код на анимации-->
-	    <div class="slider">
-	      <div class="nav">
-	          <div class="prev">
-	              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>            
-	          </div>    
-	          <div class="next">
-	              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>                
-	          </div>
-	      </div>
-	      <div class="item is-active" style="background-image: url(bg-photo.jpg)">
-	          <div class="content">
-	              <div class="item-title">Физика</div>
-	              <div class="item-text">Добро пожаловать на платформу интароктивной физики в помощь к обучению</div>
-	          </div>
-	          <div class="imgs">
-	              <div class="grid">
-	                  <div class="img img-1">
-	                      <img src="vendor/image/AtomLogo.png"/>
-	                  </div>
-	                  <div class="img img-2">
-	                      <img src="vendor/image/Mec.png"/>
-	                  </div>
-	                  <div class="img img-3">
-	                      <img src="vendor/image/y4.gif"/>
-	                  </div>
-	                  <div class="img img-4">
-	                      <img src="vendor/image/y4.gif"/>
-	                  </div>
-	              </div>
-	          </div>
-	      </div>
-
-      	<!-- Еще слайды -->
-      
-	      <div class="item" style="background-image: url(bg-photo.jpg)">
-	          <div class="content">
-	              <div class="item-title">Лабораторные работы</div>
-	              <div class="item-text">Курс лабораторных работ и проверок законов физики</div>
-	          </div>
-	          <div class="imgs">
-	              <div class="grid">
-	                  <div class="img img-1">
-	                      <img src="vendor/image/y4.gif"/>
-	                  </div>
-	                  <div class="img img-2">
-	                      <img src="vendor/image/y4.gif"/>
-	                  </div>
-	                  <div class="img img-3">
-	                      <img src="vendor/image/y4.gif"/>
-	                  </div>
-	                  <div class="img img-4">
-	                      <img src="vendor/image/y4.gif"/>
-	                  </div>
-	              </div>
-	          </div>
-	      </div>  
-	      <div class="item" style="background-image: url(bg-photo.jpg)">
-	        <div class="content">
-	            <div class="item-title">Тесты и задачи</div>
-	            <div class="item-text">Проиди тесты и решай задачи для лучшего усвоения материала</div>
-	        </div>
-	        <div class="imgs">
-	            <div class="grid">
-	                <div class="img img-1">
-	                    <img src="vendor/image/y4.gif"/>
-	                </div>
-	                <div class="img img-2">
-	                    <img src="vendor/image/y4.gif"/>
-	                </div>
-	                <div class="img img-3">
-	                    <img src="vendor/image/y4.gif"/>
-	                </div>
-	                <div class="img img-4">
-	                    <img src="vendor/image/y4.gif"/>
-	                </div>
-	            </div>
-	        </div>
-	    </div>   
-	    <div class="item" style="background-image: url(bg-photo.jpg)">
-	        <div class="content">
-	            <div class="item-title">Оценка знаний</div>
-	            <div class="item-text">Чем больше решаешь, тем больше понимаешь</div>
-	        </div>
-	        <div class="imgs">
-	            <div class="grid">
-	                <div class="img img-1">
-	                    <img src="vendor/image/y4.gif"/>
-	                </div>
-	                <div class="img img-2">
-	                    <img src="vendor/image/y4.gif"/>
-	                </div>
-	                <div class="img img-3">
-	                    <img src="vendor/image/y4.gif"/>
-	                </div>
-	                <div class="img img-4">
-	                    <img src="vendor/image/y4.gif"/>
-	                </div>
-	            </div>
-	        </div>
-    	</div> 
-    </div>
 	<div class="header" id="header">
 	<div id="mainlogo" class="sing_word"><img src="vendor/image/pushka.png" alt=""></div>
 	<input type="Search" id="search">
@@ -131,7 +30,7 @@
  		<div class="smh"> </div> 
 	</div>
 	<script type="text/javascript">
-		<?php echo file_get_contents("vendor/js/anime.min.js"); ?>
+
 		<?php echo file_get_contents("vendor/js/JSsector.js"); ?>
 		<?php echo file_get_contents("vendor/js/three.min.js"); ?>
 		<?php echo file_get_contents("vendor/js/vanta.net.min.js"); ?>
