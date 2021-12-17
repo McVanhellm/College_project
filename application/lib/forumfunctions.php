@@ -96,9 +96,19 @@
 			case 5:
 				echo "<div align='center' class='account-rang_ rang-huan_ unselectable'>Дон-Хуан</div></div>";
 				break;
-			
+
+			case -1:
+				echo "<div align='center' class='account-rang_ rang-huan_ unselectable'>Местный</div></div>";
+				break;
+			case -2:
+				echo "<div align='center' class='account-rang_ rang-huan_ unselectable'>Гуру</div></div>";
+				break;
+			case -3:
+				echo "<div align='center' class='account-rang_ rang-huan_ unselectable'>Черная луна</div></div>";
+				break;
+
 			default:
-				echo "<div align='center' class='account-rang_ rang-user_ unselectable'>Человек</div></div>";
+				echo "<div align='center' class='account-rang_ rang-user_ unselectable'>Новичок</div></div>";
 				break;
 		}
 	}
