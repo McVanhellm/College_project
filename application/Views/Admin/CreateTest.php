@@ -24,6 +24,10 @@
 				<p class="gl-text_c">Создание теста</p>
 				<input id="tests-count" placeholder="Количество тестов"></input>
 				<div onclick="CreateTasksList();" id="btn-lvl1-next">Далее</div>
+				<div id="tests-box-list">
+					<div id="test-box-list-spoiler"></div>
+					<div id="test-box-list-spoiler"></div>
+				</div>
 			</div>
 		</div>
 		<style type="text/css"> 
@@ -33,6 +37,36 @@
 				else
 					echo getRaw("css","pagesLight.css");
 			?>
+
+			.create-tests-box
+			{
+				width: 50%;
+			}
+
+			#test-box-list-spoiler
+			{
+				width: 450px;
+				height: 50px;
+				background: #222126;
+				box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+
+				margin-left: 13px;
+				margin-top: 10px;
+			}
+
+			#tests-box-list
+			{
+				margin-left: 20px;
+				margin-top: 20px;
+
+				padding-top: 5px;
+
+				width: 475px;
+				height: 725px;
+				background: #222126;
+				box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+				border-radius: 5px;
+			}
 
 			.gl-text_c
 			{
@@ -96,6 +130,7 @@
 				color: #FFFFFF;
 
 				height: 50px;
+				width: 475px;
 
 				background: #6393DC;
 				border-radius: 5px;
@@ -119,8 +154,10 @@
 
 			// 1 level - Generation placeholder them
 			let testPlaceholder = false;
+			let inputCountTestValue = 0;
 			let inputCountTest = document.getElementById('tests-count');
 			let nextBtnl1 = document.getElementById('btn-lvl1-next'); nextBtnl1.hidden = true;
+			let testsBoxList = document.getElementById('tests-box-list'); testsBoxList.hidden = true;
 			inputCountTest.addEventListener('input', CountTestChange);
 
 			function CountTestChange(e)
@@ -129,8 +166,20 @@
 				{
 					nextBtnl1.hidden = false;
 					fadeIn(document.getElementById('btn-lvl1-next'), 100);
+					inputCountTestValue = e.target.value;
 				}
-				//e.target.value
+				else
+				{
+					// add elemnt 
+				}
+			}
+
+			function CreateTasksList()
+			{
+				testPlaceholder = true;
+				testsBoxList.hidden = false;
+				nextBtnl1.hidden = true;
+				fadeIn(document.getElementById('tests-box-list'), 100);
 			}
 
 		</script>
