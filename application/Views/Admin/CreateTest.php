@@ -25,7 +25,11 @@
 				<input id="tests-count" placeholder="Количество тестов"></input>
 				<div onclick="CreateTasksList();" id="btn-lvl1-next">Далее</div>
 				<div id="tests-box-list">
+
 				</div>
+			</div>
+			<div id="content-editor-box">
+				<p id="name-select-test" class="gl-text_c"></p>
 			</div>
 		</div>
 		<style type="text/css"> 
@@ -35,6 +39,39 @@
 				else
 					echo getRaw("css","pagesLight.css");
 			?>
+
+			.selected-type-box
+			{
+				display: flex;
+			}
+
+			.select-task-type
+			{
+
+				font-family: Montserrat;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 55px;
+
+				margin-left: 15px;
+
+				padding-left: 20px;
+
+				margin-left: 20px;
+				width: 430px;
+				height: 56px;
+
+				padding: 5px;
+
+				color: #848484;
+
+				background-color: #222126;
+				border-radius: 0px 0px 5px 5px;
+				box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+
+				border: none;
+			}
 
 			#test-box-list-spoiler-content
 			{
@@ -58,6 +95,16 @@
 
 			}
 
+			details[open]
+			{
+				margin-bottom: 60px;
+			}
+
+			#test-box-list-spoiler textarea
+			{
+				margin-bottom: 20px;
+			}
+
 			#test-box-list-spoiler-title
 			{
 				width: 234px;
@@ -74,7 +121,9 @@
 
 			.create-tests-box
 			{
-				width: 50%;
+				width: 100%;
+				display: flex;
+				overflow-x: hidden;
 			}
 
 			#test-box-list-spoiler
@@ -121,7 +170,7 @@
 			      margin-left: 20px;
 			}
 
-			#create-list-test #tests-count
+			#create-list-test #tests-count, .custom-type-namefile
 			{
 				font-family: Montserrat;
 				font-style: normal;
@@ -146,7 +195,7 @@
 				border: none;
 			}
 
-			#create-list-test #tests-count:focus
+			#create-list-test #tests-count:focus, .select-task-type:focus
 			{
 				outline: none;
 			}
@@ -195,6 +244,7 @@
 			let inputCountTest = document.getElementById('tests-count');
 			let nextBtnl1 = document.getElementById('btn-lvl1-next'); nextBtnl1.hidden = true;
 			let testsBoxList = document.getElementById('tests-box-list'); testsBoxList.hidden = true;
+			let contentEditorBox = document.getElementById("content-editor-box"); contentEditorBox.hidden = true;
 			inputCountTest.addEventListener('input', CountTestChange);
 
 			function CountTestChange(e)
@@ -207,7 +257,19 @@
 				}
 				else
 				{
-					// add elemnt 
+					inputCountTestValue = e.target.value;
+					testsBoxList.hidden = true;
+					while (testsBoxList.firstChild) 
+					{
+  						testsBoxList.removeChild(testsBoxList.firstChild);
+					}
+					for (var i = 1; i <= inputCountTestValue; i++)
+					{
+						testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест '+i+'</summary><textarea id="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
+					}
+					testsBoxList.hidden = false;
+					openEditor(1);
+					fadeIn(testsBoxList, 100);
 				}
 			}
 
@@ -219,10 +281,24 @@
 
 				for (var i = 1; i <= inputCountTestValue; i++)
 				{
-					testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест 1</summary><textarea id="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
+					testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест '+i+'</summary><textarea id="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
 				}
 
-				fadeIn(document.getElementById('tests-box-list'), 100);
+				fadeIn(testsBoxList, 100);
+				openEditor(1);
+			}
+
+			// 2 level - Create task page
+			let editedTask = 1;
+
+			function openEditor(numberTask)
+			{
+				contentEditorBox.hidden = false;
+				fadeIn(contentEditorBox, 100);
+
+				contentEditorBox.innerHTML += '<div class="selected-type-box"><select id="select-task-type-task'+numberTask+'" class="select-task-type"><option value="0">Тест с одиночным выбором</option><option value="1">Тест с множественным выбором</option><option value="2">Задание с диапазоном значений</option><option value="3">Кастомный шаблон</option></select><input id="custom-type-namefile-task'+numberTask+'" class="custom-type-namefile" placeholder="Название кастомного файла"></input></div>';
+
+				document.getElementById("name-select-test").innerHTML = "Вы редактируете: Тест "+numberTask;
 			}
 
 		</script>

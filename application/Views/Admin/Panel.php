@@ -8,7 +8,6 @@
 		<title>Панель администратора</title>
 	</head>
 	<body class="">
-
 		<div class="Menu-box">
 			<div class="Menu-item-box">
 				<a href="../"><img class="logo" src="https://raw.githubusercontent.com/xoheveras/CMS/main/vendor/image/logocms.png"></a>
