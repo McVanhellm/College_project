@@ -1,39 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-	</head>
-	<style>
-		<?php echo file_get_contents("vendor/css/Style.css"); ?>
-	</style>
-	<body>
-  		<div class="intro" id="intro">
-    	<!--Код на анимации-->
-	<div class="header" id="header">
-	<div id="mainlogo" class="sing_word"><img src="vendor/image/pushka.png" alt=""></div>
-	<input type="Search" id="search">
-	<ul>
-		<li><a class="navLink" href="account/home">Личный кабинет</a></li>
-		<li><a class="navLink" href="ContactHead.html">Разработчики</a></li>
-		<li><a class="navLink" href="forum">Форум</a></li>
-	</ul>
-	</div>
-	<div class="content">
- 		<div class="smh"> </div> 
-	</div>
-	<script type="text/javascript">
-
-		<?php echo file_get_contents("vendor/js/JSsector.js"); ?>
-		<?php echo file_get_contents("vendor/js/three.min.js"); ?>
-		<?php echo file_get_contents("vendor/js/vanta.net.min.js"); ?>
-		<?php echo file_get_contents("vendor/js/JSanimation.js"); ?>
-	</script>
-</body>
+<html>
+ <link rel="stylesheet" type="text/css" href="vendor/css/Style.css">
+ <head></head>
+ <body>
+  <div class="intro" id="intro">
+   <div class="header-box">
+    <div class="logo-area">
+     <div class="logo-box"><img src="logo.png" alt=""></div>
+   </div>
+   <img class="back-img" src="vendor/image/bgindex.png" alt="">
+   <div align="right" class="button-box">
+    <a href="account/login">Войти</a>
+    <a href="account/register">Регистрация</a>
+   </div>
+   </div>
+   <div class="info-box">
+    <div class="title">Лучший способ выучить физику</div>
+    <div class="sub-text">Множество интересных задач, интерактивный режим обучения.<br> Участвуй в общем рейтинге и стань лучшим.</div>
+    <div align="center" class="btn-start">Начать</div>
+   </div>
+  </div>
+ </body>
 </html>
+<script src="vendor/js/JSsector.js"></script>
+<script src="vendor/js/three.min.js"></script>
+<script src="vendor/js/vanta.net.min.js"></script>
+<script src="vendor/js/JSanimation.js"></script>

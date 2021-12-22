@@ -27,7 +27,6 @@
             ?>
         </div>
     </header>
-
     <div id="forum-section-id" class="forum-section">
         <div class="label">Физика</div>
         <hr/>
