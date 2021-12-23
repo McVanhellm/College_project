@@ -36,26 +36,21 @@
 	// Если ошибки есть, то выводим их
 	if($data_error !='') echo $data_error;
 	
-	$countTask = $selectedJson->count;
-	$countTaskInc = 1;
+	$task = $selectedJson->Task1;
+	$taskAnswer = $task->Ask1->taskAnswer;
 
-	getContentTask($selectedJson, $countTaskInc);
+	echo "<h3>".$task->testname."</h3>
+		 <h3>".$task->Ask1->title."</h3>
+	";
 
-	function getContentTask($json, $numberTask)
+	echo "<form id='task-form-1' style=' display:flex; '>";
+	for($i=0; $i < count($taskAnswer); $i++)
 	{
-			$taskValue = $json->{"Task$numberTask"}->{"T$numberTask"};
-			echo "<h1>".$taskValue->title."</h1>";
-			if($taskValue->type == 0)
-			{
-				$taskAnswer = $taskValue->Answers;
-				echo "<form id='task-form-".$numberTask."' style=' display:flex; '>";
-				for($i=0; $i < count($taskAnswer); $i++)
-				{
-						echo "<div><input name='radiobtn-task' id='task-answer-".$i."' type='radio'><label for='task-answer-".$i."'>".$taskAnswer[$i]."</label></div>";
-				}
-				echo "</form>";
-			}
+			echo "<div><input name='radiobtn-task' id='task-answer-".$i."' type='radio'><label for='task-answer-".$i."'>".$taskAnswer[$i]."</label></div>";
 	}
+	echo "</form>";
+
+
 	?>
 	</body>
 	<style type="text/css"> 
