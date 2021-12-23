@@ -71,7 +71,8 @@
 				box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
 				border-radius: 5px;
 
-				min-height: 730px;
+				min-height: 710px;
+				max-width: 920px;
 
 				padding: 10px;
 
