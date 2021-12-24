@@ -15,7 +15,7 @@
             <div class="info-box">
                 <div class="title">Лучший способ выучить физику</div>
                 <div class="sub-text">Множество интересных задач, интерактивный режим обучения.<br> Участвуй в общем рейтинге и стань лучшим.</div>
-                <div align="center" class="btn-start">Начать</div>
+                <div align="center" class="btn-start"><a href="account/login">Начать</a></div>
             </div>
         </div>
     </body>
