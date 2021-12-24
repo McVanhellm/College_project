@@ -14,7 +14,7 @@
 			<div class="bg-modal"></div>
 			<div class="modal-box">
 				<div onclick="ModalSave(0)" class="colse-modal">X</div>
-				<div class="gl-text_c modal-label">Для сохранения выбирете секцию</div>
+				<div class="gl-text_c modal-label">Для сохранения выберите секцию</div>
 				<select id="select-section" class="modal-select-section">
 					<option value="1">Механика ( PhysLab )</option>
 					<option value="2">Молекулярная физика ( PhysLab )</option>
@@ -23,6 +23,7 @@
 					<option value="5">Атомная физика ( PhysLab )</option>
 					<option value="6">Ядерная физика ( PhysLab )</option>
 				</select>
+				<input id="name-test-save" type="text" name="">
 				<div onclick="SaveTest()" class="modal-save-btn">Сохранить</div>
 			</div>
 		</div>
@@ -553,7 +554,10 @@
 
 				for (let elem of elems) {
 					if(elem.id == editedTask+"-Ask-"+value)
-						elem.innerHTML += '<input class="ask-answer" placeholder="Текст ответа"></input><input type="radio" class="ask-selected-design" name="answer-task-'+value+'" value="#">';
+					{
+						let counter = (document.getElementById(editedTask+"-Ask-"+value).querySelectorAll('div .ask-answer')).length+1;
+						elem.innerHTML += '<input required class="ask-answer" id="'+editedTask+"-Ask-"+value+"-AskInput-"+counter+'" placeholder="Текст ответа"></input><input type="radio" id="'+editedTask+"-Ask-"+value+"-AskRadio-"+counter+'" class="ask-selected-design" name="answer-task-'+value+'" value="#">';
+					}
 				}
 			}
 
@@ -564,7 +568,7 @@
 					case 0:
 						let counter = (document.getElementById("ask-list-"+editedTask).querySelectorAll('div .ask-block')).length+1;
 						let inputText = "ask-list-"+editedTask;
-						document.getElementById(inputText).innerHTML += '<div id="'+editedTask+'-Ask-'+counter+'" class="ask-block"><img onclick="newAskAnswer('+counter+');" src="../vendor/image/add.png"><input class="ask" placeholder="Текст вопроса"></input><div class="ask-list-answer"></div></div>';
+						document.getElementById(inputText).innerHTML += '<div id="'+editedTask+'-Ask-'+counter+'" class="ask-block"><img onclick="newAskAnswer('+counter+');" src="../vendor/image/add.png"><input required id="input-Ask-'+editedTask+'-'+counter+'" class="ask" placeholder="Текст вопроса"></input><div class="ask-list-answer"></div></div>';
 					break;
 				}
 			}
@@ -640,6 +644,33 @@
 				}
 			}
 
+
+			function getAnswer(testNumber,askNumber)
+			{
+				let answerArray = [];
+				let radioArray = [];
+				let fineAnswer;
+				let counter = (document.getElementById(testNumber+"-Ask-"+askNumber).querySelectorAll('div .ask-answer')).length;
+
+				// Get children div
+				for (var i = 1; i <= counter; i++) 
+				{
+					answerArray.push(document.getElementById(testNumber+"-Ask-"+askNumber+"-AskInput-"+i).value);
+					radioArray.push(document.getElementById(testNumber+"-Ask-"+askNumber+"-AskRadio-"+i).checked);
+				}
+
+				for (var i = 0; i <= radioArray.length; i++) 
+				{
+					if(radioArray[i] == true)
+						fineAnswer = answerArray[i];
+				}
+
+				return { 
+					"taskAnswer":answerArray,
+					"fineAnswer":fineAnswer
+				};
+			}
+
 			function SaveTest()
 			{
 				let select = document.getElementById("select-section");
@@ -651,22 +682,24 @@
 				for (var i = 1; i <= countTest; i++) 
 				{
 					let selectedType = document.getElementById("select-task-type-task"+i).value;
+					let countAskInTest = (document.getElementById("ask-list-"+i).querySelectorAll('div .ask-block')).length;
 					let newJsonText = {
 		    			"testname": "Тест "+i, 
 		    			"titile": document.getElementById("title-gtest-"+i).value, 
 		    			"taskType": selectedType, 
-		    			"countTask": (document.getElementById("ask-list-"+i).querySelectorAll('div .ask-block')).length
+		    			"countTask": countAskInTest
 					}
 
 				    switch(selectedType)
 				    {
 				    	case '0':
-				    		// newJson["Test"+i] = { 
-				    		// 	"testname":"test 1", 
-				    		// 	"titile": "test", 
-				    		// 	"taskType": 0, 
-				    		// 	"countTask": 25
-				    		// };
+				    		for (var j = 1; j <= countAskInTest; j++) 
+				    		{
+				    			newJsonText["Ask"+j] = {
+				    				"title": document.getElementById("input-Ask-"+i+"-"+j).value,
+				    				"Answers": getAnswer(i,j)
+				    			}
+				    		}			    	
 				    	break;
 				    	case '1':
 				    		newJson["Test"+i] = { "none": null };
@@ -681,7 +714,8 @@
 
 				    newJson["Test"+i] = newJsonText;
 				}
-				console.log(newJson);
+				//name-test-save
+				window.location.href = '?json='+JSON.stringify(newJson)+"&testname="+document.getElementById("name-test-save").value;
 			}
 
 		</script>
