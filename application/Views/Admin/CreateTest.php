@@ -9,6 +9,25 @@
 	</head>
 	<body class="">
 
+		<!-- Модальное окно -->
+		<div id="openModal" class="modal">
+			<div class="bg-modal"></div>
+			<div class="modal-box">
+				<div onclick="ModalSave(0)" class="colse-modal">X</div>
+				<div class="gl-text_c modal-label">Для сохранения выбирете секцию</div>
+				<select id="select-section" class="modal-select-section">
+					<option value="1">Механика ( PhysLab )</option>
+					<option value="2">Молекулярная физика ( PhysLab )</option>
+					<option value="3">Элект. и магнетизм ( PhysLab )</option>
+					<option value="4">Оптика ( PhysLab )</option>
+					<option value="5">Атомная физика ( PhysLab )</option>
+					<option value="6">Ядерная физика ( PhysLab )</option>
+				</select>
+				<div onclick="SaveTest()" class="modal-save-btn">Сохранить</div>
+			</div>
+		</div>
+		<!-- Конец модаьного окна -->
+
 		<div class="Menu-box">
 			<div class="Menu-item-box">
 				<a href="../"><img class="logo" src="https://raw.githubusercontent.com/xoheveras/CMS/main/vendor/image/logocms.png"></a>
@@ -33,7 +52,8 @@
 					<p class="gl-text_c">Вы редактируете: </p>
 					<img id="left-arrow-switcher" onclick="TaskSwitcher(-1);" src="../vendor/image/LeftArrow.png">
 					<p id="name-select-test" class="gl-text_c nomargin"></p>
-					<img id="right-arrow-switcher" onclick="TaskSwitcher(1);" src="../vendor/image/RightArrow.png">
+					<img id="right-arrow-switcher" onclick="TaskSwitcher(1);" src="../vendor/image/RightArrow.png"><br>
+					<div onclick="ModalSave(1)" class="gl-text_c">Сохранить</div>
 				</div>
 				<div id="content-editor-box-task"></div>
 			</div>
@@ -45,6 +65,71 @@
 				else
 					echo getRaw("css","pagesLight.css");
 			?>
+			.modal-save-btn
+			{
+				margin-top: 15px;
+				width: 200px;
+				height: 40px;
+				margin-left: 20px;
+				background: #699BE5;
+				box-shadow: 0px 4px 17px #699BE5;
+				border-radius: 5px;
+
+				font-family: Montserrat;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 20px;
+				line-height: 44px;
+
+				text-align: center;
+
+				cursor: pointer;
+
+				color: #FFFFFF;
+			}
+
+			.modal-select-section
+			{
+				margin-left: 20px;
+			}
+
+			.bg-modal
+			{
+				background: #222126;
+				opacity: 0.8;
+				height: 100vh;
+			}
+
+			.modal-box
+			{
+
+				position: absolute;
+
+				top: 0;
+			    left: 0;
+			    right: 0;
+
+			    margin-left: 35%;
+			    margin-top: 20%;
+
+				opacity: 1;
+
+				width: 500px;
+				height: 150px;
+
+				background: #222126;
+				box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+				border-radius: 5px;
+			}
+
+			.modal
+			{
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    opacity: 0;
+			}
 
 			.ask-selected-design
 			{
@@ -57,7 +142,7 @@
 				display: flex;
 			}
 
-			#editor-type-ziro img
+			.editor-type-ziro img
 			{
 				margin-left: 96%;
 				margin-top: 5px;
@@ -65,7 +150,7 @@
 				cursor: pointer;
 			}
 
-			#editor-type-ziro
+			.editor-type-ziro
 			{
 				background: #222126;
 				box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
@@ -212,6 +297,12 @@
 			      margin-left: 20px;
 			}
 
+
+			.modal-label
+			{
+				margin-top: 0;
+				cursor: pointer;
+			}
 			.ask-answer
 			{
 				font-family: Montserrat;
@@ -351,6 +442,7 @@
 			let testsBoxList = document.getElementById('tests-box-list'); testsBoxList.hidden = true;
 			let contentEditorBox = document.getElementById("content-editor-box"); contentEditorBox.hidden = true; // Отображение редактора
 			let contentEditorBoxTask = document.getElementById("content-editor-box-task"); // Поле для дочерних элементов
+			document.getElementById("openModal").hidden = true;
 
 			// Events
 			inputCountTest.addEventListener('input', CountTestChange); // Эвент при вводе кол-в тестов
@@ -447,7 +539,7 @@
 
 				for (let elem of elems) {
 					if(elem.id == editedTask+"-Ask-"+value)
-						elem.innerHTML += '<input class="ask-answer" placeholder="Текст ответа"></input><input type="radio" class="ask-selected-design" name="ask-selected" value="#">';
+						elem.innerHTML += '<input class="ask-answer" placeholder="Текст ответа"></input><input type="radio" class="ask-selected-design" name="answer-task-'+value+'" value="#">';
 				}
 			}
 
@@ -474,10 +566,13 @@
 				else
 					document.getElementById("custom-type-namefile-task"+editedTask).readOnly = false;
 
+
+				document.getElementById("editor-type-ziro-"+editedTask).hidden = true;
+
 			    switch(selectedItem)
 			    {
 			    	case '0':
-			    		// alert(selectedItem);
+			    		document.getElementById("editor-type-ziro-"+editedTask).hidden = false;
 			    	break;
 			    	case '1':
 			    		// alert(selectedItem);
@@ -504,7 +599,7 @@
 
 				for (var i = 1; i <= countTask; i++)
 				{
-					contentEditorBoxTask.innerHTML += '<div id="Task-'+i+'"><div class="selected-type-box"><select id="select-task-type-task'+i+'" class="select-task-type"><option value="0">Тест с одиночным выбором</option><option value="1">Тест с множественным выбором</option><option value="2">Задание с диапазоном значений</option><option value="3">Кастомный шаблон</option></select><input id="custom-type-namefile-task'+i+'" class="custom-type-namefile" placeholder="Название кастомного файла"></input></div><div id="editor-type-ziro"><img onclick="newAsk(0);" src="../vendor/image/add.png"><hr/><div id="ask-list-'+i+'"></div></div></div>';
+					contentEditorBoxTask.innerHTML += '<div id="Task-'+i+'"><div class="selected-type-box"><select id="select-task-type-task'+i+'" class="select-task-type"><option value="0">Тест с одиночным выбором</option><option value="1">Тест с множественным выбором</option><option value="2">Задание с диапазоном значений</option><option value="3">Кастомный шаблон</option></select><input id="custom-type-namefile-task'+i+'" class="custom-type-namefile" placeholder="Название кастомного файла"></input></div><div class="editor-type-ziro" id="editor-type-ziro-'+i+'"><img onclick="newAsk(0);" src="../vendor/image/add.png"><hr/><div id="ask-list-'+i+'"></div></div></div>';
 
 					if(i > 1)
 						document.getElementById("Task-"+i).hidden = true;
@@ -514,6 +609,27 @@
 				document.getElementById("name-select-test").innerHTML = "Тест "+1;
 				document.getElementById("select-task-type-task"+editedTask).addEventListener("change", changeTypeTest);
 				TaskSwitcher(0);
+			}
+
+			// 3 level save
+
+			function ModalSave(value)
+			{
+				if(value == 0)
+				{
+					document.getElementById("openModal").hidden = true;
+				}
+				else
+				{
+					document.getElementById("openModal").hidden = false;
+					fadeIn(document.getElementById("openModal"),100);
+				}
+			}
+
+			function SaveTest()
+			{
+				let select = document.getElementById("select-section");
+				alert(select.querySelector(`option[value="${select.value}"]`).value);
 			}
 
 		</script>
