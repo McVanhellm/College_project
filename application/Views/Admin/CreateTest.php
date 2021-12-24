@@ -28,6 +28,7 @@
 		</div>
 		<!-- Конец модаьного окна -->
 
+		<!-- Меню -->
 		<div class="Menu-box">
 			<div class="Menu-item-box">
 				<a href="../"><img class="logo" src="https://raw.githubusercontent.com/xoheveras/CMS/main/vendor/image/logocms.png"></a>
@@ -38,6 +39,8 @@
 				</ul>
 			</div>
 		</div>
+
+		<!-- Переключатель -->
 		<div class="create-tests-box">
 			<div id="create-list-test">
 				<p class="gl-text_c">Создание теста</p>
@@ -629,7 +632,29 @@
 			function SaveTest()
 			{
 				let select = document.getElementById("select-section");
-				alert(select.querySelector(`option[value="${select.value}"]`).value);
+				let selectedSection = select.querySelector(`option[value="${select.value}"]`).value;
+
+			    switch(selectedSection)
+			    {
+			    	case '1':
+			    		alert("test");
+			    	break;
+			    	case '2':
+			    		// alert(selectedItem);
+			    	break;
+			    	case '3':
+			    		// alert(selectedItem);
+			    	break;
+			    	case '4':
+			    		// alert(selectedItem);
+			    	break;
+			    	case '5':
+			    		// alert(selectedItem);
+			    	break;
+			    	case '6':
+			    		// alert(selectedItem);
+			    	break;
+			    }
 			}
 
 		</script>
