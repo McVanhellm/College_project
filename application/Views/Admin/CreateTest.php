@@ -42,26 +42,42 @@
 		</div>
 
 		<!-- Переключатель -->
-		<div class="create-tests-box">
-			<div id="create-list-test">
-				<p class="gl-text_c">Создание теста</p>
-				<input id="tests-count" placeholder="Количество тестов"></input>
-				<div onclick="CreateTasksList();" id="btn-lvl1-next">Далее</div>
-				<div id="tests-box-list">
+		<?php
+			if(isset($args["isCreate"]))
+			{
 
-				</div>
-			</div>
-			<div id="content-editor-box">
-				<div class="Test-switcher">
-					<p class="gl-text_c">Вы редактируете: </p>
-					<img id="left-arrow-switcher" onclick="TaskSwitcher(-1);" src="../vendor/image/LeftArrow.png">
-					<p id="name-select-test" class="gl-text_c nomargin"></p>
-					<img id="right-arrow-switcher" onclick="TaskSwitcher(1);" src="../vendor/image/RightArrow.png"><br>
-					<div onclick="ModalSave(1)" class="gl-text_c">Сохранить</div>
-				</div>
-				<div id="content-editor-box-task"></div>
-			</div>
-		</div>
+
+				echo '
+					<div class="test-create-finaly">
+						<p class="gl-text_c">Тест был успешно создан!</p>
+						<img src="../vendor/image/fine.gif">
+					</div>
+				';
+			}
+			else
+			{
+				echo '<div class="create-tests-box">
+					<div id="create-list-test">
+						<p class="gl-text_c">Создание теста</p>
+						<input id="tests-count" placeholder="Количество тестов"></input>
+						<div onclick="CreateTasksList();" id="btn-lvl1-next">Далее</div>
+						<div id="tests-box-list">
+
+						</div>
+					</div>
+					<div id="content-editor-box">
+						<div class="Test-switcher">
+							<p class="gl-text_c">Вы редактируете: </p>
+							<img id="left-arrow-switcher" onclick="TaskSwitcher(-1);" src="../vendor/image/LeftArrow.png">
+							<p id="name-select-test" class="gl-text_c nomargin"></p>
+							<img id="right-arrow-switcher" onclick="TaskSwitcher(1);" src="../vendor/image/RightArrow.png"><br>
+							<div onclick="ModalSave(1)" class="gl-text_c">Сохранить</div>
+						</div>
+						<div id="content-editor-box-task"></div>
+					</div>
+				</div>';
+			}
+		?>
 		<style type="text/css"> 
 			<?php
 				if($_SESSION["themMode"])
@@ -69,6 +85,18 @@
 				else
 					echo getRaw("css","pagesLight.css");
 			?>
+
+			.test-create-finaly img
+			{
+				margin-left: 20px;
+			}
+
+			.test-create-finaly
+			{
+				margin-left: 35%;
+				margin-top: 15%;
+			}
+
 			.modal-save-btn
 			{
 				margin-top: 15px;
