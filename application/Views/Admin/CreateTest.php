@@ -426,10 +426,12 @@
 
 		<script type="text/javascript">
 
-			// fade func
-			function fadeIn(el, speed) {
+			// Постепенное появление блока ( opacity 0 -> 1 )
+			function fadeIn(el, speed) 
+			{
 			  var step = 1 / speed;
-			  var interval = setInterval(function() {
+			  var interval = setInterval(function() 
+			  {
 			    if (+el.style.opacity >= 1)
 			      clearInterval(interval);
 			      
@@ -437,41 +439,51 @@
 			  }, speed / 1000);
 			}
 
-			// 1 level - Generation placeholder them
-			let testPlaceholder = false; // Параметр отвечающий за то является ли ввод первым ( нужен для появления кнопки далее )
-			let inputCountTestValue = 0; // Количество полученных тестов
-			let inputCountTest = document.getElementById('tests-count'); // Поле с тестом
-			let nextBtnl1 = document.getElementById('btn-lvl1-next'); nextBtnl1.hidden = true;
-			let testsBoxList = document.getElementById('tests-box-list'); testsBoxList.hidden = true;
-			let contentEditorBox = document.getElementById("content-editor-box"); contentEditorBox.hidden = true; // Отображение редактора
+			// 1 level - Генерация каркаса тестов
+
+			// region Params
+			let isFirstInput = false; // Параметр отвечающий за то является ли ввод первым ( нужен для появления кнопки далее )
+			let countTest = 0; // Количество полученных тестов
+			let countTestDoom = document.getElementById('tests-count'); // Поле с тестом
+			let nextButton = document.getElementById('btn-lvl1-next');
+			let testsBoxList = document.getElementById('tests-box-list');
+			let contentEditorBox = document.getElementById("content-editor-box"); // Отображение редактора
 			let contentEditorBoxTask = document.getElementById("content-editor-box-task"); // Поле для дочерних элементов
-			document.getElementById("openModal").hidden = true;
+			let modalSaveWin = document.getElementById("openModal");
+
+			// Hide div
+			nextButton.hidden = true;
+			testsBoxList.hidden = true;
+			contentEditorBox.hidden = true;
+			modalSaveWin.hidden = true;
+
+			// endregion
 
 			// Events
-			inputCountTest.addEventListener('input', CountTestChange); // Эвент при вводе кол-в тестов
+			countTestDoom.addEventListener('input', CountTestChange); // Эвент при вводе кол-в тестов
 
 			// Визуализация тестов при вводе количества 
 			function CountTestChange(e)
 			{
-				if(!testPlaceholder)
+				if(!isFirstInput)
 				{
-					nextBtnl1.hidden = false;
+					nextButton.hidden = false;
 					fadeIn(document.getElementById('btn-lvl1-next'), 100);
-					inputCountTestValue = e.target.value;
+					countTest = e.target.value;
 				}
 				else
 				{
-					inputCountTestValue = e.target.value;
+					countTest = e.target.value;
 					testsBoxList.hidden = true;
 					while (testsBoxList.firstChild) 
 					{
   						testsBoxList.removeChild(testsBoxList.firstChild);
 					}
-					for (var i = 1; i <= inputCountTestValue; i++)
+					for (var i = 1; i <= countTest; i++)
 					{
 						testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест '+i+'</summary><textarea id="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
 					}
-					createEditor(inputCountTestValue);
+					createEditor(countTest);
 					testsBoxList.hidden = false;
 					fadeIn(testsBoxList, 100);
 				}
@@ -480,16 +492,16 @@
 			// Первоначальное создание тестов
 			function CreateTasksList()
 			{
-				testPlaceholder = true;
+				isFirstInput = true;
 				testsBoxList.hidden = false;
-				nextBtnl1.hidden = true;
+				nextButton.hidden = true;
 
-				for (var i = 1; i <= inputCountTestValue; i++)
+				for (var i = 1; i <= countTest; i++)
 				{
 					testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест '+i+'</summary><textarea id="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
 				}
 
-				createEditor(inputCountTestValue);
+				createEditor(countTest);
 
 				fadeIn(testsBoxList, 100);
 			}
@@ -528,7 +540,7 @@
 				else
 					document.getElementById("left-arrow-switcher").hidden = true;
 
-				if(editedTask != inputCountTestValue)
+				if(editedTask != countTest)
 					document.getElementById("right-arrow-switcher").hidden = false;
 				else
 					document.getElementById("right-arrow-switcher").hidden = true;
