@@ -203,7 +203,7 @@
 				border: none;
 			}
 
-			#test-box-list-spoiler-content
+			.test-box-list-spoiler-content
 			{
 				margin-top: 29px;
 				background-color: #1C1B1F;
@@ -456,7 +456,6 @@
 			testsBoxList.hidden = true;
 			contentEditorBox.hidden = true;
 			modalSaveWin.hidden = true;
-
 			// endregion
 
 			// Events
@@ -481,7 +480,7 @@
 					}
 					for (var i = 1; i <= countTest; i++)
 					{
-						testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест '+i+'</summary><textarea id="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
+						testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест '+i+'</summary><textarea id="title-gtest-'+i+'" class="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
 					}
 					createEditor(countTest);
 					testsBoxList.hidden = false;
@@ -498,7 +497,7 @@
 
 				for (var i = 1; i <= countTest; i++)
 				{
-					testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест '+i+'</summary><textarea id="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
+					testsBoxList.innerHTML += '<details id="test-box-list-spoiler"><summary id="test-box-list-spoiler-title">Тест '+i+'</summary><textarea id="title-gtest-'+i+'" class="test-box-list-spoiler-content">Информация о тесте...</textarea></details>';
 				}
 
 				createEditor(countTest);
@@ -602,7 +601,7 @@
 			}
 
 			// Создание разметки редактора тестов
-			function createEditor(countTask)
+			function createEditor(countTest)
 			{
 				while (contentEditorBoxTask.firstChild) 
 				{
@@ -612,7 +611,7 @@
 				contentEditorBox.hidden = false;
 				fadeIn(contentEditorBox, 100);
 
-				for (var i = 1; i <= countTask; i++)
+				for (var i = 1; i <= countTest; i++)
 				{
 					contentEditorBoxTask.innerHTML += '<div id="Task-'+i+'"><div class="selected-type-box"><select id="select-task-type-task'+i+'" class="select-task-type"><option value="0">Тест с одиночным выбором</option><option value="1">Тест с множественным выбором</option><option value="2">Задание с диапазоном значений</option><option value="3">Кастомный шаблон</option></select><input id="custom-type-namefile-task'+i+'" class="custom-type-namefile" placeholder="Название кастомного файла"></input></div><div class="editor-type-ziro" id="editor-type-ziro-'+i+'"><img onclick="newAsk(0);" src="../vendor/image/add.png"><hr/><div id="ask-list-'+i+'"></div></div></div>';
 
@@ -645,28 +644,44 @@
 			{
 				let select = document.getElementById("select-section");
 				let selectedSection = select.querySelector(`option[value="${select.value}"]`).value;
+				let newJson = {
+					countTest:countTest
+				}
 
-			    switch(selectedSection)
-			    {
-			    	case '1':
-			    		alert("test");
-			    	break;
-			    	case '2':
-			    		// alert(selectedItem);
-			    	break;
-			    	case '3':
-			    		// alert(selectedItem);
-			    	break;
-			    	case '4':
-			    		// alert(selectedItem);
-			    	break;
-			    	case '5':
-			    		// alert(selectedItem);
-			    	break;
-			    	case '6':
-			    		// alert(selectedItem);
-			    	break;
-			    }
+				for (var i = 1; i <= countTest; i++) 
+				{
+					let selectedType = document.getElementById("select-task-type-task"+i).value;
+					let newJsonText = {
+		    			"testname": "Тест "+i, 
+		    			"titile": document.getElementById("title-gtest-"+i).value, 
+		    			"taskType": selectedType, 
+		    			"countTask": (document.getElementById("ask-list-"+i).querySelectorAll('div .ask-block')).length
+					}
+
+				    switch(selectedType)
+				    {
+				    	case '0':
+				    		// newJson["Test"+i] = { 
+				    		// 	"testname":"test 1", 
+				    		// 	"titile": "test", 
+				    		// 	"taskType": 0, 
+				    		// 	"countTask": 25
+				    		// };
+				    	break;
+				    	case '1':
+				    		newJson["Test"+i] = { "none": null };
+				    	break;
+				    	case '2':
+				    		newJson["Test"+i] = {  "none": null };
+				    	break;
+				    	case '3':
+				    		newJson["Test"+i] = {  "none": null };
+				    	break;
+				    }
+
+				    newJson["Test"+i] = newJsonText;
+				}
+				console.log(newJson);
 			}
 
 		</script>
