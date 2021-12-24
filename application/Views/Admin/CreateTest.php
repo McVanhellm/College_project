@@ -715,7 +715,7 @@
 				    newJson["Test"+i] = newJsonText;
 				}
 				//name-test-save
-				window.location.href = '?json='+JSON.stringify(newJson)+"&testname="+document.getElementById("name-test-save").value;
+				window.location.href = '?json='+JSON.stringify(newJson)+"&testname="+document.getElementById("name-test-save").value+"&section="+selectedSection;
 			}
 
 		</script>

@@ -39,5 +39,10 @@
 			}
 			file_put_contents('application/Views/'.$receivedFolder.'/'.$receivedAction.'.php', getRaw("template","php.txt"));
 		}
+
+		public function CreateTask($json,$taskName,$section)
+		{
+			$this->datebase->updatedate("INSERT INTO tests (id,title,type,level,data) VALUES(NULL,'$taskName',0,'$section','$json')");
+		}
 	}	
 ?>

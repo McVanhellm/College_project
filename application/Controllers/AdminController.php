@@ -71,7 +71,10 @@
 		{
 			if(session::isAuth('isAdminAuth') == false)
 				return header("Location: login");
-			
+
+			if(isset($_GET["json"]))
+				$this->model->CreateTask($_GET['json'],$_GET['testname'],$_GET['section']);
+				
 			$this->view->LoadDesign();
 		}
 	}
