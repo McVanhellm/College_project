@@ -34,12 +34,13 @@
         </div>
     </header>
     <content>
+        <!-- Уровни -->
         <div class="level-tree">
-               <div id="level_list"> <!-- Блок с уровнями -->
-        <div id="subList"> <!-- Блок внутри для настройки -->
+               <div id="level_list">
+        <div id="subList"> 
             <div id="dotted_line"></div>
-          <div class="levels unselectable" id="first_level">  <!-- Сам кружок(блок с радиусом 50%) -->
-          <div class="levels_number">1</div> <!-- Блок с цифрой внутри -->
+          <div class="levels unselectable" id="first_level">
+          <div class="levels_number">1</div>
           </div>
 
           <div class="levels levels-margin" id="second_level"> 
@@ -90,6 +91,7 @@
                 }
             ?>
         </div>
+        <!-- Ачивки и Авторы -->
         <div class="alter-box">
             <?php $HomeAcivement = Achievement::getAchievement($args["Achivment"]); ?>
             <div class="Achievement">
@@ -114,8 +116,10 @@
             </div>
         </div>
     </content>
-    <footer>
-    </footer>
+    <!-- Модальное окно с тестами -->
+    <div class="test-modal">
+        
+    </div>
     <style type="text/css"> 
         <?php echo file_get_contents("vendor/css/HomeTest.css"); ?>
     </style>

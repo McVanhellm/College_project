@@ -6,7 +6,6 @@ header
 {
 	display: flex;
 	height: 150px;
-
 	margin-bottom: 40px;
 }
 
@@ -23,7 +22,6 @@ header
 .logo-box
 {
 	width: 50%;
-
 	padding-left: 40px;
 	padding-top: 20px;
 }
@@ -34,11 +32,7 @@ header
 	margin-top: 95px;
 }
 
-.level-information .text
-{
-	display: flex;
-}
-
+.level-information .text { display: flex; }
 
 .level-information .name-level .title
 {
@@ -48,7 +42,6 @@ header
 	font-size: 24px;
 	line-height: 29px;
 	color: #797979;
-
 	width: 300px;
 }
 
@@ -79,15 +72,11 @@ header
 	color: #797979;
 }
 
-.level-information .quotes .icon
-{
-	margin-left: 20px;
-}
+.level-information .quotes .icon { margin-left: 20px; }
 
 .account-icon
 {
 	width: 50%;
-
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: 600;
@@ -113,35 +102,17 @@ header
     align-items: center;
 }
 
-.free-spaces
-{
-	width: 30%;
-}
+.free-spaces { width: 30%; }
 
-content
-{
-	display: flex;
-}
+content { display: flex; }
 
-.level-tree
-{
-	width: 50%;
-}
+.level-tree { width: 50%; }
 
-.Task-list
-{
-	width: 100%;
-}
+.Task-list { width: 100%; }
 
-.alter-box
-{
-	width: 50%;
-}
+.alter-box { width: 50%; }
 
-.Task-list
-{
-	overflow: auto;
-}
+.Task-list { overflow: auto; }
 
 .alter-box .Achievement
 {
@@ -151,15 +122,11 @@ content
 	font-size: 24px;
 	line-height: 29px;
 	color: #797979;
-
 	margin-left: 60px;
 	margin-right: 90px;
 }
 
-.alter-box .Achievement .title
-{
-	margin-bottom: 20px;
-}
+.alter-box .Achievement .title { margin-bottom: 20px; }
 
 .auther-course
 {
@@ -169,7 +136,6 @@ content
 	font-size: 24px;
 	line-height: 29px;
 	color: #797979;
-
 	margin-top: 30px;
 	margin-left: 60px;
 	margin-right: 90px;
@@ -194,10 +160,8 @@ content
     border-radius:50%;
     margin-right: 10px;   
 }
-.auther-course #userInfo
-{
-    display: flex;
-}
+
+.auther-course #userInfo { display: flex; }
 
 .alter-box .Achievement .sub-text
 {
@@ -206,25 +170,17 @@ content
 	line-height: 22px;
 }
 
-.alter-box .Achievement .icon
-{
-	margin-left: 30%;
-}
-
+.alter-box .Achievement .icon { margin-left: 30%; }
 
 .task
 {
 	background: #FFFFFF;
 	box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
-
 	margin-top: 1%;
-
 	margin-left: 2%;
-
 	height: 72px;
 	width: 96%;
-
 	display: flex;
 }
 
@@ -234,17 +190,15 @@ content
 	font-style: normal;
 	font-weight: 600;
 	font-size: 14px;
-	/* identical to box height */
 	color: #000000;
-
 	display: block;
     align-self: center;
-
     margin-left: 30px;
     width: 80%;
 }
 
-.task button{ /*Настройка кнопки в теме*/
+.task button
+{
   background-color:rgb(121, 165, 231);
   color: white;
   width: 22%;
@@ -256,9 +210,8 @@ content
   font-size: 1.2em;
   min-width: 158px;
 }
-.task button:hover{ /*Кнопка при наводке на неё*/
-  background-color: rgb(26, 49, 85);  
-}
+
+.task button:hover { background-color: rgb(26, 49, 85); }
 
 .Task-list
 {
@@ -266,57 +219,47 @@ content
 	max-height: 700px;
 }
 
-::-webkit-scrollbar-button {
-  height: 310px; //for vertical scrollbar
-}
+::-webkit-scrollbar-button { height: 310px; }
 
-.Task-list::-webkit-scrollbar {
+.Task-list::-webkit-scrollbar 
+{
 	width: 25px;
 	background: #F2F2F2;
 	border-radius: 5px;
 }
 
-.Task-list::-webkit-scrollbar-thumb {
+.Task-list::-webkit-scrollbar-thumb 
+{
 	background: #6393DC;
 	border-radius: 5px;
-
 	width: 25px;
 	height: 38px;
 }
 
-#level_list{ /*Столб 6-ти уровней*/
-/*    position: absolute;
-    left: 250px;
-    height: 1000px;
-    width: 85px;
-    margin-top: 50px;*/
-}
-#subList{ /*Блок внутри столб, для адекватной настройки*/
+#subList
+{
     display: flex;
     height: 100%;
     width: 100%;
-/*    margin-top: 100%;*/
     flex-flow: column;
     align-items: center;
 }
-#dotted_line{
+
+#dotted_line
+{
     position: absolute;
-/*    margin-top: 100px;*/
     height: 450px;
     border-right: 3px dotted rgba(133, 133, 133, 0.438);
     z-index: 0;
 }
 
-.levels-margin
-{
-	margin-top: 20px;
-}
+.levels-margin { margin-top: 20px; }
 
-.levels{ /*Кружки уровней*/
+.levels
+{
     display: flex;
     height: 50px;
     width: 50px;
-/*    margin-top: 60px;*/
     border: 3px solid rgb(121, 165, 231);
     border-radius: 50%;
     align-items: center;
@@ -329,17 +272,22 @@ content
     opacity: 1;
     
 }
-.selected{
+.selected
+{
     background-color: rgb(121, 165, 231);
     color: white;
     width: 70px;
     height: 70px;
 }
-.levels:focus{
+
+.levels:focus
+{
     background-color: rgb(121, 165, 231);
     color: white;
 }
-.levels_number{ /*Цифры внутри кружков*/
+
+.levels_number
+{
  	font-size: 1.5em;
 	font-family: Montserrat;
 	font-style: normal;
@@ -347,11 +295,15 @@ content
 	font-size: 24px;
 	line-height: 29px;
 }
-#first_level{ /*Первый кружок(уровень)*/
+
+#first_level
+{
     height: 70px;
     width: 70px;
 }
-#sixth_level{ /*Последний кружок(уровень)*/
+
+#sixth_level
+{
     height: 70px;
     width: 70px;
 }
@@ -362,10 +314,8 @@ content
 	border: 3px solid #699BE5;
 	border-radius: 35px;
 	box-sizing: border-box;
-
 	width: 65px;
 	height: 65px;
-
 	text-align: center;
 }
 
@@ -375,24 +325,22 @@ content
 	border: 3px solid #699BE5;
 	border-radius: 25px;
 	box-sizing: border-box;
-
 	width: 50px;
 	height: 50px;
 }
 
-.level-tree
+.level-tree { padding-top: 5%; }
+
+#progressbar 
 {
-	padding-top: 5%;
-}
-
-#progressbar {
 	margin-top: 5px;
-  background-color: #C4C4C4;
-  border-radius: 5px;
-  margin-bottom: 10px;
+	background-color: #C4C4C4;
+	border-radius: 5px;
+	margin-bottom: 10px;
 }
 
-#progressbar>div {
+#progressbar>div 
+{
   background-color: #6393DC;
   border-radius: 5px;
 }
