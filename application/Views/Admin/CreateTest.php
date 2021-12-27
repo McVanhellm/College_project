@@ -16,9 +16,9 @@
 				<div onclick="ModalSave(0)" class="colse-modal">X</div>
 				<div class="gl-text_c modal-label">Для сохранения выберите секцию</div>
 				<select id="select-section" class="modal-select-section">
-					<option value="1">Механика ( PhysLab )</option>
+					<option value="1">Механика( PhysLab )</option>
 					<option value="2">Молекулярная физика ( PhysLab )</option>
-					<option value="3">Элект. и магнетизм ( PhysLab )</option>
+					<option value="3">Электричество и магнетизм ( PhysLab )</option>
 					<option value="4">Оптика ( PhysLab )</option>
 					<option value="5">Атомная физика ( PhysLab )</option>
 					<option value="6">Ядерная физика ( PhysLab )</option>
