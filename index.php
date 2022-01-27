@@ -10,6 +10,8 @@
 	# Connecting the main classes
 	require_once("application/app.php");
 
+	ajsgiojaisjgiajsgjasjgaskjglkasjklgjaskljgkasjgasjklgasljgklaskglaskgjasklgjkiasgklasjklgasklgklasgklasklgakslgjkaskglajskl
+
 	# Routing
 	$router = new Router();
 
